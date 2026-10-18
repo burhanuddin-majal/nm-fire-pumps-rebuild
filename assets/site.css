@@ -26,3 +26,47 @@
 
 /* Keep the approved 272.jpg logo consistently sized on certificates page */
 body .brand-logo{display:block;width:190px!important;max-width:190px!important;height:auto!important;max-height:64px!important;object-fit:contain;flex:0 0 auto}
+
+
+/* Strength page */
+.strength-hero{min-height:570px;position:relative;display:flex;align-items:center;overflow:hidden;background:#10232d;color:#fff}
+.strength-hero-image{position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,22,30,.96) 0%,rgba(8,22,30,.82) 48%,rgba(8,22,30,.22) 100%),url('https://cdn-pro.analyspeed.com/286/template/pc/default/images/strength01.jpg.webp') center/cover}
+.strength-hero-content{position:relative;z-index:1;padding-top:70px;padding-bottom:95px}
+.strength-hero h1{font:800 clamp(39px,5.4vw,68px)/1.05 Manrope,sans-serif;letter-spacing:-.05em;margin:0;max-width:800px}
+.strength-hero h1 em{font-style:normal;color:#f16b58}
+.strength-hero-content>p:not(.eyebrow){max-width:570px;color:#d2dde1;font-size:16px;margin:22px 0 28px}
+.strength-hero-label{position:absolute;bottom:0;left:0;right:0;padding:15px max(24px,calc((100vw - var(--max))/2));border-top:1px solid #ffffff30;color:#c5d0d5;font-size:9px;letter-spacing:.18em}
+.strength-intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start;margin-bottom:45px}
+.strength-intro-grid h2,.strength-training h2{font:700 clamp(31px,3.6vw,45px)/1.15 Manrope,sans-serif;letter-spacing:-.04em;margin:0}
+.strength-intro-grid p:not(.eyebrow),.strength-training-grid p:not(.eyebrow){color:var(--muted);font-size:14px;margin-top:0}
+.strength-feature{display:grid;grid-template-columns:1.15fr .85fr;min-height:340px;background:#f2f5f6}
+.strength-feature-image{min-height:340px;overflow:hidden}
+.strength-feature-image img{width:100%;height:100%;min-height:340px;object-fit:cover;display:block}
+.strength-feature-copy{padding:clamp(25px,4vw,55px);align-self:center}
+.strength-index{font-size:9px;letter-spacing:.15em;color:var(--red);font-weight:800}
+.strength-feature-copy h3{font:700 clamp(23px,2.6vw,32px)/1.2 Manrope,sans-serif;margin:18px 0 12px}
+.strength-feature-copy p,.strength-dark-copy p:not(.eyebrow){color:var(--muted);font-size:13px}
+.strength-dark{background:var(--navy);color:#fff;padding:95px 0}
+.strength-split{display:grid;grid-template-columns:1fr 1fr;gap:75px;align-items:center}
+.strength-photo-stack{position:relative;padding:0 48px 45px 0}
+.strength-photo-main{display:block;width:100%;height:400px;object-fit:cover}
+.strength-photo-small{position:absolute;right:0;bottom:0;width:48%;height:180px;object-fit:cover;border:8px solid var(--navy)}
+.strength-dark-copy h2{font:700 clamp(32px,4vw,48px)/1.12 Manrope,sans-serif;letter-spacing:-.04em;margin:0 0 22px}
+.strength-dark-copy p:not(.eyebrow){color:#c5d0d5}
+.strength-dark-copy .btn{margin-top:15px}
+.strength-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.strength-gallery figure{margin:0;background:#fff;border:1px solid var(--line)}
+.strength-gallery img{display:block;width:100%;height:245px;object-fit:cover}
+.strength-gallery figcaption{padding:19px 20px 22px;display:flex;flex-direction:column;gap:5px}
+.strength-gallery figcaption strong{font:700 16px Manrope,sans-serif}
+.strength-gallery figcaption span{font-size:11px;color:var(--muted)}
+.strength-training-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:65px;align-items:center}
+.strength-training-grid h2{margin-bottom:20px}
+.strength-training-grid .btn{margin-top:12px}
+.strength-training-grid>img{display:block;width:100%;height:360px;object-fit:cover}
+.strength-cta{background:var(--red);color:#fff;padding:60px 0}
+.strength-cta-inner{display:flex;justify-content:space-between;align-items:center;gap:35px}
+.strength-cta h2{font:700 clamp(28px,3.5vw,42px)/1.13 Manrope,sans-serif;margin:0;max-width:720px}
+.strength-cta p:not(.eyebrow){color:#ffe3df;max-width:600px}
+@media(max-width:800px){.strength-intro-grid,.strength-feature,.strength-split,.strength-training-grid{grid-template-columns:1fr;gap:30px}.strength-gallery{grid-template-columns:1fr 1fr}.strength-photo-main{height:330px}.strength-training-grid>img{height:300px}.strength-cta-inner{align-items:flex-start;flex-direction:column}}
+@media(max-width:520px){.strength-hero{min-height:540px}.strength-hero-content{padding-top:50px;padding-bottom:85px}.strength-gallery{grid-template-columns:1fr}.strength-gallery img{height:230px}.strength-photo-stack{padding-right:25px}.strength-photo-small{width:55%;height:135px;border-width:5px}.strength-cta{padding:45px 0}}
