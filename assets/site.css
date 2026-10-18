@@ -6,3 +6,5 @@
 
 .category-image{display:block;width:100%;height:190px;object-fit:contain;background:#f5f7f8;margin:0 0 18px;padding:10px;box-sizing:border-box}.product-grid .category{min-width:0;overflow:hidden}.product-grid .category h3{font-size:17px;line-height:1.35;min-height:44px}.product-grid .category p{font-size:12px;line-height:1.65}
 @media(max-width:640px){.category-list.product-grid{grid-template-columns:1fr}.category-image{height:210px}.product-grid .category h3{min-height:0}}
+
+.product-art:before,.product-art:after{display:none}.product-photo{position:relative;z-index:1;display:block;width:100%;height:100%;object-fit:contain;padding:12px;box-sizing:border-box}.product-art .art-label{z-index:2;background:rgba(255,255,255,.88);padding:6px 8px}
