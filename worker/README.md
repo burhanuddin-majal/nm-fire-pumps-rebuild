@@ -1,31 +1,20 @@
-# NM Fire inquiry email relay
+# NM Fire inquiry form
 
-This Cloudflare Worker sends contact-form inquiries to `pakistan@nmfirepump.com` using the Resend email API. Email credentials stay in Cloudflare Worker secrets, not in the public website.
+The website contact form now uses FormSubmit's AJAX endpoint and sends inquiries to `pakistan@nmfirepump.com`.
 
-## Setup
+## Initial activation
 
-1. Create or sign in to a Resend account and add a sending domain you control.
-2. Complete Resend's domain verification by adding the DNS records it provides at the domain's DNS host. Use a sender address on that verified domain for `RESEND_FROM_EMAIL`.
-3. In Cloudflare, open the `nm-fire-inquiry-relay` Worker and add these settings under **Settings → Variables and Secrets**:
-   - Secret `RESEND_API_KEY`: your Resend API key.
-   - Variable `RESEND_FROM_EMAIL`: a sender such as `NM Fire Website <website@your-verified-domain.example>`, using a real address/domain that Resend has verified. Do not use the example literally.
-4. Replace the currently deployed Worker code with the current `worker/index.js` from this repository, then deploy it. If the Cloudflare editor's filename is `worker.js`, paste the contents of `index.js` into that editor; the filename itself can differ.
-5. The website form should point to the Worker URL in `contact.html` via its `data-endpoint` attribute.
-6. Submit a harmless test enquiry and verify that it arrives at `pakistan@nmfirepump.com`.
+1. Open the live website's Contact Us page.
+2. Submit one test inquiry using an email address you control.
+3. FormSubmit should send an activation/verification email to `pakistan@nmfirepump.com` the first time the endpoint is used.
+4. The recipient must complete that verification before normal email delivery is activated.
+5. Submit a second harmless test and confirm the inquiry arrives.
 
-## Allowed website origins
+The endpoint is configured in `contact.html`; the AJAX submit logic is in `assets/site.js`.
 
-The Worker currently accepts these origins:
-- `https://burhanuddin-majal.github.io`
-- `https://nmfirepumppakistan.com`
-- `https://www.nmfirepumppakistan.com`
+## Notes
 
-Only the origin that matches the actual page is sent in CORS headers. If the production site uses a different hostname, update `ALLOWED_ORIGINS` in `index.js` and redeploy.
-
-## Security notes
-
-- Never commit or paste `RESEND_API_KEY` into GitHub or frontend code.
-- The recipient is fixed in the Worker as `pakistan@nmfirepump.com`; form visitors cannot choose where inquiries are sent.
-- The Worker validates required fields, limits field lengths, escapes submitted text in the HTML email, and includes a honeypot. CORS is not a substitute for rate limiting.
-- GitHub Pages is static and cannot run this Worker by itself. The Worker must be deployed separately.
-- The email provider must authorize the sender domain before delivery to arbitrary recipients is enabled. The recipient address does not need to be the sender domain.
+- This flow does not require Gmail SMTP, an app password, Discord, or Wispbyte.
+- The old Cloudflare Worker is no longer used by the website. The source file here is a retirement stub; changes in GitHub do **not** automatically redeploy an already deployed Cloudflare Worker.
+- The contact form keeps FormSubmit's spam protection enabled and includes a hidden honeypot field.
+- FormSubmit handles email delivery; the website does not store a private inquiry dashboard.
