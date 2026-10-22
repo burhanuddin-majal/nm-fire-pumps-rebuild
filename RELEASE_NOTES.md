@@ -21,3 +21,9 @@ This file is maintained automatically by GitHub Actions for commits pushed to `m
 - **Commit No.:** [`bf5d35b34df4d1649126e0f6224bf1844ebcd703`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/bf5d35b34df4d1649126e0f6224bf1844ebcd703)
 - **Date:** 2026-10-22
 - **Change:** ci: automate release notes on every main commit 
+
+### v1.0.2
+- **Serial No.:** RN-59463043
+- **Commit No.:** [`32688dd851b365e92efa7675a09db9090099f873`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/32688dd851b365e92efa7675a09db9090099f873)
+- **Date:** 2026-10-22
+- **Change:** fix: increment release notes from latest version 
