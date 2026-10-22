@@ -1,8 +1,10 @@
 PROJECT RESTRICTED-USE LICENSE
-Version 1.1
+Version 1.2
 Effective date: October 22, 2026
 
-Copyright © 2026 the project owner. All rights reserved.
+Project Owner: Burhanuddin Majal
+Co-Owner / Project Partner: M/S Fakhri Brothers
+Copyright © 2026 Burhanuddin Majal. All rights reserved.
 
 NOTICE
 This repository is provided for review and use only under the terms stated in this license. Public visibility on GitHub does not, by itself, grant permission to copy, download, fork, modify, republish, commercially exploit, or deploy this project. Access to the repository is not a transfer of ownership or intellectual-property rights.
@@ -51,7 +53,9 @@ Where an unauthorized use is identified, the copyright holder may request attrib
 No statement in this license guarantees that a particular use will result in prosecution or any specific legal outcome. Criminal prosecution, where applicable, is determined by the relevant authorities under applicable law. All remedies are subject to applicable law and the facts of the matter.
 
 8. OWNERSHIP AND RESERVATION OF RIGHTS
-No ownership interest is transferred by this license. All rights not expressly granted are reserved by the copyright holder. This document is a custom restricted-use license and is not an OSI-approved open-source license.
+The project owner is Burhanuddin Majal. M/S Fakhri Brothers is identified as Co-Owner / Project Partner for this project. This identification records the project's stated roles but does not, by itself, determine the legal allocation of copyright ownership or transfer any intellectual-property rights; any shared ownership or transfer should be documented separately in a written agreement signed by the relevant parties.
+
+No ownership interest is transferred to users by this license. All rights not expressly granted are reserved by the copyright holder. This document is a custom restricted-use license and is not an OSI-approved open-source license.
 
 9. THIRD-PARTY MATERIALS
 The Project Materials may refer to, link to, or include third-party code, fonts, images, trademarks, libraries, or other assets. Those materials may be owned by other parties and may be governed by separate terms. This license does not grant rights that the project copyright holder does not own or have authority to grant. Users are responsible for reviewing and complying with applicable third-party terms.
