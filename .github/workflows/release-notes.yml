@@ -1,0 +1,82 @@
+name: Update Release Notes
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-notes-main
+  cancel-in-progress: false
+
+jobs:
+  update-release-notes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Append release entries for pushed commits
+        shell: bash
+        run: |
+          set -euo pipefail
+          NOTES="RELEASE_NOTES.md"
+          if [[ ! -f "$NOTES" ]]; then
+            printf '# Release Notes — NM Fire Website Rebuild\n\nAutomatically maintained for commits pushed to `main`.\n\n## Release History\n' > "$NOTES"
+          fi
+
+          # Avoid recording a second release for the workflow's own notes-only commit.
+          mapfile -t changed_files < <(git diff-tree --no-commit-id --name-only -r "$GITHUB_SHA")
+          if [[ "${#changed_files[@]}" -eq 1 && "${changed_files[0]}" == "$NOTES" ]]; then
+            echo "This push only changes release notes; nothing to record."
+            exit 0
+          fi
+
+          before="${{ github.event.before }}"
+          after="$GITHUB_SHA"
+          if [[ "$before" =~ ^0+$ ]] || ! git cat-file -e "$before^{commit}" 2>/dev/null; then
+            before="$(git rev-list --max-parents=0 "$after" | tail -n 1)"
+          fi
+
+          # Capture pushed commits oldest-first; exclude any commit already listed in the notes.
+          mapfile -t commits < <(git rev-list --reverse "$before..$after")
+          current_version="$(grep -oE 'v[0-9]+\.[0-9]+\.[0-9]+' "$NOTES" | head -n 1 | sed 's/^v//' || true)"
+          if [[ -z "$current_version" ]]; then current_version="1.0.0"; fi
+          IFS='.' read -r major minor patch <<< "$current_version"
+
+          for commit in "${commits[@]}"; do
+            if grep -Fq "$commit" "$NOTES"; then
+              continue
+            fi
+
+            patch=$((patch + 1))
+            version="v${major}.${minor}.${patch}"
+            serial="RN-$(od -An -N4 -tu4 /dev/urandom | tr -d ' ' | awk '{printf "%08d", $1 % 100000000}')"
+            short_message="$(git show -s --format=%s "$commit" | tr '\n' ' ' | sed 's/|/\\|/g')"
+            commit_date="$(git show -s --format=%cs "$commit")"
+
+            {
+              printf '\n### %s\n' "$version"
+              printf -- '- **Serial No.:** %s\n' "$serial"
+              printf -- '- **Commit No.:** [`%s`](https://github.com/%s/commit/%s)\n' "$commit" "$GITHUB_REPOSITORY" "$commit"
+              printf -- '- **Date:** %s\n' "$commit_date"
+              printf -- '- **Change:** %s\n' "$short_message"
+            } >> "$NOTES"
+          done
+
+          if git diff --quiet -- "$NOTES"; then
+            echo "No new commits to record."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$NOTES"
+          git commit -m "docs: update release notes"
+          git push
