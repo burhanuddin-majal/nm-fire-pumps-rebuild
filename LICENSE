@@ -1,33 +1,66 @@
-CUSTOM NON-COMMERCIAL LICENSE
-Copyright (c) 2026, the project owner.
+PROJECT RESTRICTED-USE LICENSE
+Version 1.1
+Effective date: October 22, 2026
 
-1. General restriction
-You may view this repository and its source code. Copying, downloading, forking, modifying, or redistributing the project is not permitted unless expressly allowed by this license or approved in advance in writing by the copyright holder.
+Copyright © 2026 the project owner. All rights reserved.
 
-2. No unauthorized forks, downloads, mirrors, or websites
-Except for the named-user exception in Section 4 or prior written permission from the copyright holder, you may not fork or download this project, publish copies or modified versions, mirror the source code, or host a website that reproduces or uses project code, assets, or other protected material. Do not remove copyright notices or misrepresent the project as your own.
+NOTICE
+This repository is provided for review and use only under the terms stated in this license. Public visibility on GitHub does not, by itself, grant permission to copy, download, fork, modify, republish, commercially exploit, or deploy this project. Access to the repository is not a transfer of ownership or intellectual-property rights.
 
-If an unauthorized copy or website is discovered, the copyright holder may request its removal and may pursue available legal remedies where supported by applicable law. Legal action and any prosecution are matters for the relevant authorities and courts; they are not automatic.
+1. PURPOSE AND SCOPE
+This license applies to the project materials made available in this repository, including source code, website structure, page layouts, stylesheets, scripts, original graphics, documentation, and other materials owned by the project copyright holder (collectively, the “Project Materials”).
 
-3. Commercial use prohibited by default
-Commercial use is NOT permitted without prior written permission from the copyright holder, except for the named users expressly permitted under Section 4. Commercial use includes, but is not limited to, selling the project or derivative works, offering it as a paid service, using it to provide paid services, or using it in a product or business activity intended to generate revenue.
+The license applies to complete or partial copies and to adaptations or derivative versions of the Project Materials. It does not override separate licenses or rights belonging to third-party owners.
 
-4. Named-user exception
-The following named users are expressly permitted to use this project, including for commercial purposes:
+2. RESTRICTIONS ON COPYING AND DISTRIBUTION
+Except where expressly permitted under Section 5 or authorized in advance in writing by the copyright holder, you may not:
+- Download, copy, fork, clone, mirror, or otherwise reproduce the Project Materials.
+- Modify, adapt, translate, or create derivative works from the Project Materials.
+- Publish, redistribute, sell, sublicense, or make the Project Materials available to others.
+- Deploy or host a website, application, template, or service that reproduces or incorporates protected Project Materials.
+- Remove, obscure, or alter copyright, attribution, or licensing notices.
+- Represent the Project Materials or a derivative version as independently created by you or by another party.
+
+Using only general ideas, methods, or functionality that are not protected by applicable intellectual-property law is not necessarily restricted by this license. Third-party materials remain subject to their respective rights and license terms.
+
+3. COMMERCIAL USE
+Commercial use is prohibited unless the user is specifically authorized under Section 5 or has obtained prior written permission from the copyright holder. Commercial use includes, without limitation, selling or licensing the Project Materials, incorporating them into a paid product or service, using them to deliver paid services, or using them in a business activity intended to generate revenue.
+
+Payment, attribution, or a link back to this repository does not independently create permission to use the Project Materials.
+
+4. NO AUTOMATIC RIGHTS FROM PUBLIC ACCESS
+GitHub hosting, repository visibility, a public link, or the technical ability to access or copy files does not grant any additional license or permission. GitHub may provide platform features such as forking or downloading; this custom license does not technically disable those features. Users remain responsible for complying with these terms and applicable platform rules.
+
+5. EXPRESSLY AUTHORIZED USERS
+The following named individuals or entities are expressly authorized to use, copy, modify, fork, download, and deploy the Project Materials, including for commercial purposes, subject to this license and applicable third-party rights:
 - Fakhri Brothers
 - Burhanuddin Majal
 - Mustafa Majal
 - CNP Nmfire
 
-This exception is personal to the named individuals or entities above and does not automatically grant permission to their customers, affiliates, contractors, or other third parties. It does not transfer ownership or permit sublicensing. Any broader permission must be granted in writing by the copyright holder.
+This authorization applies only to the named individuals or entities themselves. It does not automatically extend to their customers, affiliates, contractors, employees acting outside their authorized duties, partners, or other third parties. It does not transfer ownership or permit sublicensing or redistribution to unauthorized parties. Any broader authorization must be granted in writing by the copyright holder.
 
-The same names are listed in allowed-users.txt. If there is a conflict, this LICENSE controls.
+The same authorized names are listed in allowed-users.txt. If that file conflicts with this license, this license controls.
 
-5. Conditions
-When use or redistribution is expressly permitted, include this LICENSE and preserve applicable copyright notices. Do not claim that the project is your original work if it is not.
+6. PERMISSION REQUESTS
+Anyone seeking permission beyond the rights expressly granted here must obtain written authorization from the copyright holder before copying, modifying, distributing, deploying, or commercially using the Project Materials. Permission requests should identify the intended use, materials involved, distribution method, and whether the use is commercial.
 
-6. No warranty
-The project is provided "AS IS", without warranties or conditions of any kind, to the maximum extent permitted by applicable law.
+7. ENFORCEMENT AND REMEDIES
+Where an unauthorized use is identified, the copyright holder may request attribution correction, removal, cessation of use, or other appropriate remedies. The copyright holder may submit platform complaints, request takedowns, or pursue civil or other legal remedies where available under applicable law.
 
-7. Rights not granted
-All rights not expressly granted in this license are reserved by the copyright holder. This is a custom license, not an OSI-approved open-source license. If you need permission beyond these terms, obtain written permission from the copyright holder.
+No statement in this license guarantees that a particular use will result in prosecution or any specific legal outcome. Criminal prosecution, where applicable, is determined by the relevant authorities under applicable law. All remedies are subject to applicable law and the facts of the matter.
+
+8. OWNERSHIP AND RESERVATION OF RIGHTS
+No ownership interest is transferred by this license. All rights not expressly granted are reserved by the copyright holder. This document is a custom restricted-use license and is not an OSI-approved open-source license.
+
+9. THIRD-PARTY MATERIALS
+The Project Materials may refer to, link to, or include third-party code, fonts, images, trademarks, libraries, or other assets. Those materials may be owned by other parties and may be governed by separate terms. This license does not grant rights that the project copyright holder does not own or have authority to grant. Users are responsible for reviewing and complying with applicable third-party terms.
+
+10. DISCLAIMER OF WARRANTY AND LIMITATION
+To the maximum extent permitted by applicable law, the Project Materials are provided “AS IS” and “AS AVAILABLE,” without warranties or conditions of any kind, express or implied, including warranties of merchantability, fitness for a particular purpose, and non-infringement. To the maximum extent permitted by law, the copyright holder is not liable for claims or damages arising from use of the Project Materials.
+
+11. SEVERABILITY AND CHANGES
+If any provision of this license is held unenforceable, the remaining provisions will continue to apply to the extent permitted by law. The copyright holder may publish a revised license for future versions of the Project Materials. A revision does not automatically change the terms that applied to an earlier grant of written permission unless the relevant parties agree otherwise.
+
+12. CONTACT AND LEGAL REVIEW
+For permissions or licensing questions, contact the copyright holder through a contact method published in the repository or an official project website. This license is a project-use notice, not legal advice. Its interpretation and enforceability depend on the applicable law and circumstances.
