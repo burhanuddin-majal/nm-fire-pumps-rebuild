@@ -159,3 +159,9 @@ This file is maintained automatically by GitHub Actions for commits pushed to `m
 - **Commit No.:** [`8a703f6ba79596b431844d381d19e9c65837ead0`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/8a703f6ba79596b431844d381d19e9c65837ead0)
 - **Date:** 2026-10-23
 - **Change:** Fix Stable logo image path 
+
+### v1.0.25
+- **Serial No.:** RN-04885884
+- **Commit No.:** [`97d0d1696bfb0a460c770522d2c014b89211e74b`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/97d0d1696bfb0a460c770522d2c014b89211e74b)
+- **Date:** 2026-10-23
+- **Change:** Handle routed AI model response formats 
