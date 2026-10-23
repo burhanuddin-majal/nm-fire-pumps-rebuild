@@ -171,3 +171,9 @@ This file is maintained automatically by GitHub Actions for commits pushed to `m
 - **Commit No.:** [`82031450ce7213483cd9604248b9db9a7948b92a`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/82031450ce7213483cd9604248b9db9a7948b92a)
 - **Date:** 2026-10-23
 - **Change:** Document beta version warning in README 
+
+### v1.0.27
+- **Serial No.:** RN-89280266
+- **Commit No.:** [`7759c428ce4a17ba5cbd2cf270aba2a32fb55329`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/7759c428ce4a17ba5cbd2cf270aba2a32fb55329)
+- **Date:** 2026-10-23
+- **Change:** docs: add abuse and network blocking policy 
