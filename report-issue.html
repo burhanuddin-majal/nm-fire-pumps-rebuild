@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Report a website bug or suggest an improvement for the NM Fire website.">
-<title>Bugs and Issues Report | NM Fire</title>
+<meta name="description" content="Report a website bug or suggest an improvement for the NM Fire Beta website.">
+<title>Bugs and Issues Report | NM Fire Beta</title>
 <link rel="stylesheet" href="assets/site.css">
 <script defer src="assets/site.js"></script>
 <style>
@@ -18,7 +18,7 @@
 </head>
 <body>
 <header class="header"><div class="wrap navrow">
-<a class="brand" href="index.html" aria-label="NMFIRE Pakistan home"><img class="brand-logo" src="assets/272.jpg" alt="NMFIRE Pakistan"></a>
+<a class="brand" href="index.html" aria-label="NMFIRE Pakistan home"><img class="brand-logo" src="../assets/272.jpg" alt="NMFIRE Pakistan"></a>
 <button class="menu-toggle" aria-expanded="false" aria-controls="mainnav">☰ Menu</button>
 <nav id="mainnav" class="nav"><a href="index.html">Home</a><a href="products.html">Products</a><a href="about.html">About Us</a><a href="strength.html">Strength</a><a href="projects.html">Projects</a><a href="resources.html">Resources</a><a class="nav-cta" href="contact.html">Contact Us ↗</a></nav>
 </div></header>
@@ -26,17 +26,17 @@
 <section class="page-hero"><div class="wrap"><div class="crumb"><a href="index.html">HOME</a> / BUGS AND ISSUES REPORT</div><h1>Bugs and Issues Report</h1><p>Tell us what went wrong or suggest an improvement. Reports are sent to the current website-maintenance inbox.</p></div></section>
 <section class="section"><div class="wrap">
 <div class="report-form content">
-<p class="eyebrow">NM FIRE WEBSITE</p>
+<p class="eyebrow">NM FIRE BETA WEBSITE</p>
 <h2>What would you like to report?</h2>
 <p>Fill in the details below. Please be specific so the issue can be reproduced and checked.</p>
 <form class="tool-panel" data-contact-form data-endpoint="https://formsubmit.co/ajax/981af37cda57169ca1637142af0f2847">
-<input type="hidden" name="_subject" value="NM Fire — Website issue report">
+<input type="hidden" name="_subject" value="NM Fire Beta — Website issue report">
 <input type="hidden" name="_template" value="table">
 <input type="hidden" name="_captcha" value="true">
 <div class="form-grid">
 <div class="form-field" aria-hidden="true" style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden"><label for="website">Leave this field empty</label><input id="website" name="_honey" tabindex="-1" autocomplete="off"></div>
 <div class="form-field"><label for="report-type">Report type *</label><select id="report-type" name="Report type" required><option value="Bug report">Bug report</option><option value="Feature suggestion">Suggest an improvement</option><option value="Content correction">Content correction</option><option value="Other">Other</option></select></div>
-<div class="form-field"><label for="page-url">Affected page or URL *</label><input id="page-url" name="Affected page or URL" required maxlength="500" placeholder="e.g. homepage or page URL"></div>
+<div class="form-field"><label for="page-url">Affected page or URL *</label><input id="page-url" name="Affected page or URL" required maxlength="500" placeholder="e.g. Beta homepage or page URL"></div>
 <div class="form-field"><label for="name">Your name (optional)</label><input id="name" name="Name" autocomplete="name" maxlength="120"></div>
 <div class="form-field"><label for="email">Email (optional)</label><input id="email" name="email" type="email" autocomplete="email" maxlength="254" placeholder="If you would like a reply"></div>
 <div class="form-field"><label for="device">Device / browser</label><input id="device" name="Device and browser" maxlength="200" placeholder="e.g. Windows, Chrome"></div>
@@ -47,11 +47,11 @@
 <p class="form-note" data-form-message>Your report will be sent through the configured FormSubmit endpoint. FormSubmit may require activation before delivery is enabled.</p>
 <div class="report-warning"><strong>Privacy reminder:</strong> Do not submit passwords, access tokens, payment information, private customer details, or confidential business information.</div>
 <button class="btn btn-red" type="submit">Send report <span>→</span></button>
-<a class="btn btn-dark" href="index.html#report-issue">Back to homepage</a>
+<a class="btn btn-dark" href="index.html#report-issue">Back to Beta homepage</a>
 </form>
 </div></div></section>
 </main>
-<footer class="footer"><div class="wrap footer-bottom"><span>© <span id="year"></span> CNP NM Fire-fighting System Co., Ltd.</span><a href="index.html">Back to homepage ↗</a></div></footer>
+<footer class="footer"><div class="wrap footer-bottom"><span>© <span id="year"></span> CNP NM Fire-fighting System Co., Ltd.</span><a href="index.html">Back to Beta homepage ↗</a></div></footer>
 <script>
 (()=>{const params=new URLSearchParams(location.search);const type=params.get('type');const select=document.getElementById('report-type');if(select&&type==='feature')select.value='Feature suggestion';else if(select&&type==='bug')select.value='Bug report';})();
 </script>
