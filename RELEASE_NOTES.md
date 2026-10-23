@@ -111,3 +111,9 @@ This file is maintained automatically by GitHub Actions for commits pushed to `m
 - **Commit No.:** [`4ffc8b2198ac1e9c0ee84e8762668bc903b55932`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/4ffc8b2198ac1e9c0ee84e8762668bc903b55932)
 - **Date:** 2026-10-23
 - **Change:** Add Beta favicon from stable assets 
+
+### v1.0.17
+- **Serial No.:** RN-28899669
+- **Commit No.:** [`b0f79950c2381e6892d299917ba2ce21c1b94958`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/b0f79950c2381e6892d299917ba2ce21c1b94958)
+- **Date:** 2026-10-23
+- **Change:** Fix Beta chatbot response field compatibility 
