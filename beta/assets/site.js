@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded',()=>{const toggle=document.querySel
 
 /* NM Fire website-grounded AI product assistant (Beta only). */
 (()=>{
-  const CHAT_API_URL='https://YOUR-CLOUDFLARE-WORKER.workers.dev/chat';
+  const CHAT_API_URL='https://api.batool-majal.workers.dev/chat';
   const configured=CHAT_API_URL.startsWith('https://')&&!CHAT_API_URL.includes('YOUR-CLOUDFLARE-WORKER');
   const style=document.createElement('style');
   style.textContent=`
