@@ -81,3 +81,9 @@ This file is maintained automatically by GitHub Actions for commits pushed to `m
 - **Commit No.:** [`559137bbb0278dea6871b42ab5445d38d0e2e671`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/559137bbb0278dea6871b42ab5445d38d0e2e671)
 - **Date:** 2026-10-23
 - **Change:** Document Beta AI assistant and backend setup 
+
+### v1.0.12
+- **Serial No.:** RN-77458813
+- **Commit No.:** [`ce6691be897e54559a51765f964bd4449181f20c`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/ce6691be897e54559a51765f964bd4449181f20c)
+- **Date:** 2026-10-23
+- **Change:** Fix AI chat widget script template syntax 
