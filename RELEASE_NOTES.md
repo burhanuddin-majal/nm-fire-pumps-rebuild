@@ -201,3 +201,9 @@ This file is maintained automatically by GitHub Actions for commits pushed to `m
 - **Commit No.:** [`6c2d74282ce2a2593fd79e3aa154a2e81e5d2a8d`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/6c2d74282ce2a2593fd79e3aa154a2e81e5d2a8d)
 - **Date:** 2026-10-23
 - **Change:** Fix dropdown hover navigation on resources page 
+
+### v1.0.32
+- **Serial No.:** RN-56309170
+- **Commit No.:** [`8a6fd5ebc9c74ada6dd380d2f3e7d5dc96b63600`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/8a6fd5ebc9c74ada6dd380d2f3e7d5dc96b63600)
+- **Date:** 2026-10-23
+- **Change:** Fix Strength page navigation dropdowns 
