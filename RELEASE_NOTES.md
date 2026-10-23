@@ -165,3 +165,9 @@ This file is maintained automatically by GitHub Actions for commits pushed to `m
 - **Commit No.:** [`97d0d1696bfb0a460c770522d2c014b89211e74b`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/97d0d1696bfb0a460c770522d2c014b89211e74b)
 - **Date:** 2026-10-23
 - **Change:** Handle routed AI model response formats 
+
+### v1.0.26
+- **Serial No.:** RN-88862217
+- **Commit No.:** [`82031450ce7213483cd9604248b9db9a7948b92a`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/82031450ce7213483cd9604248b9db9a7948b92a)
+- **Date:** 2026-10-23
+- **Change:** Document beta version warning in README 
