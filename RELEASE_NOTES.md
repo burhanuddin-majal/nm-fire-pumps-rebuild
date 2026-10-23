@@ -141,3 +141,9 @@ This file is maintained automatically by GitHub Actions for commits pushed to `m
 - **Commit No.:** [`4fcb95cc5c959cc03fb82a468fe19ee5a031c31b`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/4fcb95cc5c959cc03fb82a468fe19ee5a031c31b)
 - **Date:** 2026-10-23
 - **Change:** Clean up AI worker README and align deployment docs 
+
+### v1.0.22
+- **Serial No.:** RN-24148084
+- **Commit No.:** [`1e5370b6a738e27d950eef5030675d4d22986f78`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/1e5370b6a738e27d950eef5030675d4d22986f78)
+- **Date:** 2026-10-23
+- **Change:** Correct in-line centrifugal pump listing to UL only 
