@@ -7,6 +7,15 @@ A responsive, static reference-style website rebuild for **CNP NM Fire-fighting 
 - **Official NM Fire website:** https://www.nmfirepumps.com/
 - **Repository:** https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild
 
+
+## Beta AI Product Assistant
+
+The Beta pages now include a floating **Ask NM Fire AI** chat interface. Its backend lives separately in `ai-worker/` and is designed to ground answers in the site's published pages and product-detail data. It is instructed not to invent missing ratings, standards, approvals, or model specifications, and to refer uncertain selections to the manufacturer and project engineer.
+
+**Setup status:** the chat interface and backend source are committed, but the AI service is not live yet. The site owner must deploy the Cloudflare Worker, configure the provider API key as a Worker secret and choose a supported model, then replace the placeholder `CHAT_API_URL` in `beta/assets/site.js` with the deployed endpoint. Do not put API keys in frontend files or commit them to GitHub. AI provider usage may cost money.
+
+Backend deployment steps are in [ai-worker/README.md](ai-worker/README.md). This feature is Beta-only; Stable pages have not been changed.
+
 ## Stable website pages
 
 | File | Purpose |
@@ -39,6 +48,10 @@ A responsive, static reference-style website rebuild for **CNP NM Fire-fighting 
 │   │   └── config.yml
 │   └── workflows/
 │       └── release-notes.yml
+├── ai-worker/
+│   ├── index.js
+│   ├── wrangler.toml
+│   └── README.md
 ├── assets/
 │   ├── 272.jpg
 │   ├── nmfire-pakistan-logo.svg
