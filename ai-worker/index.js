@@ -72,8 +72,13 @@ export default {
       });
       const result = await upstream.json().catch(()=>({}));
       if (!upstream.ok) return new Response(JSON.stringify({error:"The AI provider returned an error. Please try again later."}),{status:502,headers});
-      const answer = result.choices?.[0]?.message?.content;
-      if (typeof answer!=="string"||!answer.trim()) return new Response(JSON.stringify({error:"The assistant could not produce an answer. Please try again."}),{status:502,headers});
+      const rawAnswer = result.choices?.[0]?.message?.content;
+      const answer = typeof rawAnswer === "string" ? rawAnswer : Array.isArray(rawAnswer) ? rawAnswer.map(part => typeof part === "string" ? part : (part?.text || part?.content || "")).join("\\n") : "";
+      if (!answer.trim()) {
+        // Some routed models return a non-text content shape; make the failure actionable in logs.
+        console.error("AI provider returned no usable text", JSON.stringify({model,finish_reason:result.choices?.[0]?.finish_reason,keys:Object.keys(result.choices?.[0]?.message || {})}));
+        return new Response(JSON.stringify({error:"The AI model returned an empty response. Please try again; if it repeats, the Worker model setting needs updating."}),{status:502,headers});
+      }
       return new Response(JSON.stringify({answer:answer.trim(),source:"NM Fire website"}),{status:200,headers});
     } catch {
       return new Response(JSON.stringify({error:"The AI service is temporarily unavailable."}),{status:502,headers});
