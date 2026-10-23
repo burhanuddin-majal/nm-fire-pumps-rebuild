@@ -189,3 +189,9 @@ This file is maintained automatically by GitHub Actions for commits pushed to `m
 - **Commit No.:** [`1235536bba1e7b053a10fb2735ac9cd4a2b28e8e`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/1235536bba1e7b053a10fb2735ac9cd4a2b28e8e)
 - **Date:** 2026-10-23
 - **Change:** Add About Us and Products dropdown menus 
+
+### v1.0.30
+- **Serial No.:** RN-94675136
+- **Commit No.:** [`8d6bdc50103197afaa6477b4aaa30fc8176626a8`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/8d6bdc50103197afaa6477b4aaa30fc8176626a8)
+- **Date:** 2026-10-23
+- **Change:** Refine Products and About Us dropdown navigation 
