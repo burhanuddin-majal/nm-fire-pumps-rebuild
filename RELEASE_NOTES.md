@@ -147,3 +147,9 @@ This file is maintained automatically by GitHub Actions for commits pushed to `m
 - **Commit No.:** [`1e5370b6a738e27d950eef5030675d4d22986f78`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/1e5370b6a738e27d950eef5030675d4d22986f78)
 - **Date:** 2026-10-23
 - **Change:** Correct in-line centrifugal pump listing to UL only 
+
+### v1.0.23
+- **Serial No.:** RN-14685655
+- **Commit No.:** [`efd70bc07b6f54f155d1ed29960e0eeba61648c5`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/efd70bc07b6f54f155d1ed29960e0eeba61648c5)
+- **Date:** 2026-10-23
+- **Change:** Publish Beta website workings to Stable 
