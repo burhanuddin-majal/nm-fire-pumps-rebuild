@@ -7,12 +7,17 @@ A responsive, static reference-style website rebuild for **CNP NM Fire-fighting 
 - **Official NM Fire website:** https://www.nmfirepumps.com/
 - **Repository:** https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild
 
-
-
-
 ## Beta Version Warning
 
 **The Beta version may contain errors, bugs, incomplete features, or compatibility issues. We recommend using the Stable version for normal use.** If an error or bug occurs on your device or in your browser while using Beta, you use it at your own risk. To the maximum extent permitted by applicable law, the project owner is not responsible for issues, damage, or loss arising from use of the Beta version. This notice does not exclude any responsibility that cannot legally be excluded.
+
+## Abuse, Spam, and Network Blocking Policy
+
+Please use the website and its forms responsibly. Do not submit spam, repeated irrelevant content, abusive messages, malicious payloads, threats, or other inappropriate information. Submissions that violate this policy may be rejected, restricted, or reported, and access may be blocked.
+
+Where technically available and legally permitted, the site operator may use IP-address blocking, VPN/proxy access restrictions, and network or device-related signals to detect and limit repeated abuse or attempts to bypass restrictions. These methods may not identify every attempt and do not guarantee that a particular person or device can be identified. Do not attempt to evade a block. Any collection or use of technical data remains subject to applicable law and the site's actual configuration.
+
+**Important:** This section describes the site's abuse policy; it does not mean that IP blocking, VPN blocking, or device/network detection is already implemented or active. Those controls must be separately configured and tested before they can be relied on.
 
 ## Beta AI Product Assistant
 
