@@ -135,3 +135,9 @@ This file is maintained automatically by GitHub Actions for commits pushed to `m
 - **Commit No.:** [`faed53d9e474c0084810a5aad0edb20988de7785`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/faed53d9e474c0084810a5aad0edb20988de7785)
 - **Date:** 2026-10-23
 - **Change:** Add Markdown heading and block rendering to beta AI chat 
+
+### v1.0.21
+- **Serial No.:** RN-49155553
+- **Commit No.:** [`4fcb95cc5c959cc03fb82a468fe19ee5a031c31b`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/4fcb95cc5c959cc03fb82a468fe19ee5a031c31b)
+- **Date:** 2026-10-23
+- **Change:** Clean up AI worker README and align deployment docs 
