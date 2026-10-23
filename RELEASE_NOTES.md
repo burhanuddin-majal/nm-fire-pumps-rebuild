@@ -129,3 +129,9 @@ This file is maintained automatically by GitHub Actions for commits pushed to `m
 - **Commit No.:** [`8a1d45cab806aee1c3e5f61d6ce4d6a22cb8e095`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/8a1d45cab806aee1c3e5f61d6ce4d6a22cb8e095)
 - **Date:** 2026-10-23
 - **Change:** Fix OpenRouter worker configuration syntax 
+
+### v1.0.20
+- **Serial No.:** RN-48601388
+- **Commit No.:** [`faed53d9e474c0084810a5aad0edb20988de7785`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/faed53d9e474c0084810a5aad0edb20988de7785)
+- **Date:** 2026-10-23
+- **Change:** Add Markdown heading and block rendering to beta AI chat 
