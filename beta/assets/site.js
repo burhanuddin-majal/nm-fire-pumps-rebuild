@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded',()=>{const toggle=document.querySel
   const CHAT_API_URL='https://YOUR-CLOUDFLARE-WORKER.workers.dev/chat';
   const configured=CHAT_API_URL.startsWith('https://')&&!CHAT_API_URL.includes('YOUR-CLOUDFLARE-WORKER');
   const style=document.createElement('style');
-  style.textContent=\`
+  style.textContent=`
   .nm-ai-launch{position:fixed;right:22px;bottom:22px;z-index:1000;border:0;border-radius:999px;background:#e54835;color:#fff;padding:14px 19px;font:700 14px 'DM Sans',sans-serif;box-shadow:0 12px 34px #10232d35;cursor:pointer;display:flex;align-items:center;gap:9px}
   .nm-ai-launch:hover{background:#bd3025;transform:translateY(-1px)}.nm-ai-launch:focus-visible,.nm-ai-send:focus-visible,.nm-ai-close:focus-visible{outline:3px solid #10232d;outline-offset:3px}
   .nm-ai-panel{position:fixed;right:22px;bottom:84px;z-index:1001;width:min(390px,calc(100vw - 28px));height:min(590px,calc(100vh - 115px));background:#fff;border:1px solid #dce3e6;border-radius:18px;box-shadow:0 20px 70px #10232d30;display:none;overflow:hidden;flex-direction:column;font-family:'DM Sans',sans-serif;color:#17252d}
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded',()=>{const toggle=document.querySel
   .nm-ai-quick{display:flex;gap:7px;flex-wrap:wrap;padding:0 14px 10px}.nm-ai-quick button{border:1px solid #dce3e6;background:#fff;border-radius:999px;padding:7px 9px;font:600 11px 'DM Sans',sans-serif;cursor:pointer;color:#17252d}.nm-ai-quick button:hover{border-color:#e54835}
   .nm-ai-form{padding:12px;border-top:1px solid #dce3e6;display:flex;gap:8px}.nm-ai-input{min-width:0;flex:1;border:1px solid #cbd5d9;border-radius:11px;padding:11px;font:13px 'DM Sans',sans-serif;resize:none;max-height:90px}.nm-ai-send{border:0;border-radius:11px;background:#e54835;color:#fff;font-weight:700;padding:0 14px;cursor:pointer}.nm-ai-send:disabled{opacity:.55;cursor:wait}.nm-ai-foot{padding:0 14px 10px;color:#63717a;font-size:10px}
   @media(max-width:480px){.nm-ai-launch{right:14px;bottom:14px}.nm-ai-panel{right:8px;bottom:72px;width:calc(100vw - 16px);height:min(620px,calc(100dvh - 90px))}}
-  \`;
+  `;
   document.head.appendChild(style);
   const launch=document.createElement('button');launch.className='nm-ai-launch';launch.type='button';launch.setAttribute('aria-label','Open NM Fire AI Product Assistant');launch.innerHTML='<span aria-hidden="true">✦</span> Ask NM Fire AI';
   const panel=document.createElement('section');panel.className='nm-ai-panel';panel.setAttribute('role','dialog');panel.setAttribute('aria-label','NM Fire AI Product Assistant');panel.setAttribute('aria-modal','false');
