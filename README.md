@@ -8,6 +8,12 @@ A responsive, static reference-style website rebuild for **CNP NM Fire-fighting 
 - **Repository:** https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild
 
 
+
+
+## Beta Version Warning
+
+**The Beta version may contain errors, bugs, incomplete features, or compatibility issues. We recommend using the Stable version for normal use.** If an error or bug occurs on your device or in your browser while using Beta, you use it at your own risk. To the maximum extent permitted by applicable law, the project owner is not responsible for issues, damage, or loss arising from use of the Beta version. This notice does not exclude any responsibility that cannot legally be excluded.
+
 ## Beta AI Product Assistant
 
 The Beta pages now include a floating **Ask NM Fire AI** chat interface. Its backend lives separately in `ai-worker/` and is designed to ground answers in the site's published pages and product-detail data. It is instructed not to invent missing ratings, standards, approvals, or model specifications, and to refer uncertain selections to the manufacturer and project engineer.
