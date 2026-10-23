@@ -39,3 +39,9 @@ This file is maintained automatically by GitHub Actions for commits pushed to `m
 - **Commit No.:** [`0055c22ece1f95ba37b9b1c20d458b5765ec1548`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/0055c22ece1f95ba37b9b1c20d458b5765ec1548)
 - **Date:** 2026-10-23
 - **Change:** docs: configure GitHub issue template chooser 
+
+### v1.0.5
+- **Serial No.:** RN-99506032
+- **Commit No.:** [`d501f50d06bb40a35b28db9e9fcede1c5920a713`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/d501f50d06bb40a35b28db9e9fcede1c5920a713)
+- **Date:** 2026-10-23
+- **Change:** feat(beta): add Bugs and Issues Report section 
