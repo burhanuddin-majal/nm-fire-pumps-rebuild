@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Private or sensitive concern
+    url: https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/blob/main/CODE_OF_CONDUCT.md
+    about: Review the Code of Conduct for reporting concerns. Do not post private information in a public issue.
+  - name: Website and business enquiries
+    url: https://www.nmfirepumps.com/
+    about: Use the official NM Fire Pumps website for business enquiries rather than a public GitHub issue.
