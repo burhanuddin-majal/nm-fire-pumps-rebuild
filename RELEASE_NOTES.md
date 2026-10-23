@@ -93,3 +93,9 @@ This file is maintained automatically by GitHub Actions for commits pushed to `m
 - **Commit No.:** [`1ddaa210ab8542529ec5b08a753e80fc4a56c0e4`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/1ddaa210ab8542529ec5b08a753e80fc4a56c0e4)
 - **Date:** 2026-10-23
 - **Change:** Connect Beta AI assistant to supplied Workers endpoint 
+
+### v1.0.14
+- **Serial No.:** RN-93115161
+- **Commit No.:** [`48d99b4af54c07ef6b0f5852eb774cb719987861`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/48d99b4af54c07ef6b0f5852eb774cb719987861)
+- **Date:** 2026-10-23
+- **Change:** Render basic Markdown formatting in Beta AI chat 
