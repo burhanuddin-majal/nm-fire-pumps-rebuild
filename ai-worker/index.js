@@ -47,7 +47,9 @@ export default {
     if (request.method === "OPTIONS") return new Response(null,{status:204,headers});
     const url = new URL(request.url);
     if (request.method !== "POST" || url.pathname !== "/chat") return new Response(JSON.stringify({error:"Not found."}),{status:404,headers});
-    const apiKey = env.OPENROUTER_API_KEY || env.AI_API_KEY;\n    const model = env.AI_MODEL || "openrouter/free";\n    if (!apiKey) return new Response(JSON.stringify({error:"AI service is not configured yet. Add the OPENROUTER_API_KEY secret in Cloudflare."}),{status:503,headers});
+    const apiKey = env.OPENROUTER_API_KEY || env.AI_API_KEY;
+    const model = env.AI_MODEL || "openrouter/free";
+    if (!apiKey) return new Response(JSON.stringify({error:"AI service is not configured yet. Add the OPENROUTER_API_KEY secret in Cloudflare."}),{status:503,headers});
     let body;
     try { body = await request.json(); } catch { return new Response(JSON.stringify({error:"Invalid JSON request."}),{status:400,headers}); }
     const message = typeof body.message === "string" ? body.message.trim().slice(0,2000) : "";
@@ -55,7 +57,7 @@ export default {
     const history = Array.isArray(body.history) ? body.history.slice(-8).filter(m=>m&&["user","assistant"].includes(m.role)&&typeof m.content==="string").map(m=>({role:m.role,content:m.content.slice(0,1800)})) : [];
     try {
       const context = await getWebsiteContext();
-      const base = (env.AI_BASE_URL || "https://api.openai.com/v1").replace(/\/+$/,"");
+      const base = (env.AI_BASE_URL || "https://openrouter.ai/api/v1").replace(/\/+$/,"");
       const upstream = await fetch(base+"/chat/completions", {
         method:"POST",
         headers:{"Authorization":"Bearer "+apiKey,"Content-Type":"application/json","HTTP-Referer":SITE_BASE,"X-OpenRouter-Title":"NM Fire Website Assistant"},
