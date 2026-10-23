@@ -57,3 +57,9 @@ This file is maintained automatically by GitHub Actions for commits pushed to `m
 - **Commit No.:** [`f2b58ab4cfc44624c049572c956d6aec787b917d`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/f2b58ab4cfc44624c049572c956d6aec787b917d)
 - **Date:** 2026-10-23
 - **Change:** fix(beta): use FormSubmit token for issue reports 
+
+### v1.0.8
+- **Serial No.:** RN-39442896
+- **Commit No.:** [`bd2d21f0fc4d86fcc0317b71a0c9f14c20d5c851`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/bd2d21f0fc4d86fcc0317b71a0c9f14c20d5c851)
+- **Date:** 2026-10-23
+- **Change:** fix(stable): preserve form submit button label 
