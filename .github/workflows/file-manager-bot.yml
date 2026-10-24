@@ -1,0 +1,122 @@
+name: File Manager Bot
+
+on:
+  workflow_dispatch:
+    inputs:
+      operation:
+        description: "What should the bot do?"
+        required: true
+        type: choice
+        options:
+          - create
+          - update
+          - delete
+      file_path:
+        description: "Repository-relative path (example: assets/test.txt)"
+        required: true
+        type: string
+      file_content:
+        description: "New text content (used for create/update; leave blank for delete)"
+        required: false
+        type: string
+      confirm_delete:
+        description: "Type DELETE to confirm a deletion"
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: file-manager-bot-main
+  cancel-in-progress: false
+
+jobs:
+  manage-file:
+    name: Manage repository file
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: true
+
+      - name: Validate request
+        env:
+          OPERATION: ${{ inputs.operation }}
+          FILE_PATH: ${{ inputs.file_path }}
+          CONFIRM_DELETE: ${{ inputs.confirm_delete }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if [[ -z "$FILE_PATH" || "$FILE_PATH" == /* || "$FILE_PATH" == *".."* || "$FILE_PATH" == *$'\n'* ]]; then
+            echo "::error::Use a safe repository-relative file path without '..'."
+            exit 1
+          fi
+
+          case "$FILE_PATH" in
+            .git/*|.github/workflows/*|.github/workflows|.git|)
+              echo "::error::The bot cannot modify Git internals or workflow files."
+              exit 1
+              ;;
+          esac
+
+          if [[ "$OPERATION" == "create" && -e "$FILE_PATH" ]]; then
+            echo "::error::File already exists. Choose update if you intend to replace it."
+            exit 1
+          fi
+
+          if [[ "$OPERATION" == "update" && ! -f "$FILE_PATH" ]]; then
+            echo "::error::File does not exist. Choose create to add a new file."
+            exit 1
+          fi
+
+          if [[ "$OPERATION" == "delete" ]]; then
+            if [[ "$CONFIRM_DELETE" != "DELETE" ]]; then
+              echo "::error::Deletion requires confirm_delete to be exactly DELETE."
+              exit 1
+            fi
+            if [[ ! -f "$FILE_PATH" ]]; then
+              echo "::error::File does not exist."
+              exit 1
+            fi
+          fi
+
+      - name: Create or update text file
+        if: inputs.operation == 'create' || inputs.operation == 'update'
+        env:
+          FILE_PATH: ${{ inputs.file_path }}
+          FILE_CONTENT: ${{ inputs.file_content }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$(dirname "$FILE_PATH")"
+          printf '%s' "$FILE_CONTENT" > "$FILE_PATH"
+
+      - name: Delete file
+        if: inputs.operation == 'delete'
+        env:
+          FILE_PATH: ${{ inputs.file_path }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -- "$FILE_PATH"
+
+      - name: Commit and push change
+        env:
+          OPERATION: ${{ inputs.operation }}
+          FILE_PATH: ${{ inputs.file_path }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- "$FILE_PATH"
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "file-manager: ${OPERATION} ${FILE_PATH}"
+          git push origin HEAD:main
