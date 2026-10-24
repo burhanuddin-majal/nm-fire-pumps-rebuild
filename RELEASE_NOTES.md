@@ -261,3 +261,9 @@ This file is maintained automatically by GitHub Actions for commits pushed to `m
 - **Commit No.:** [`f0ccb8979cc97544a3a1f070be288e75b1f9ddaa`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/f0ccb8979cc97544a3a1f070be288e75b1f9ddaa)
 - **Date:** 2026-10-24
 - **Change:** Remove obsolete Beta label from issue report page 
+
+### v1.0.42
+- **Serial No.:** RN-00165721
+- **Commit No.:** [`e2b767ba5ced6f1f83cfeed3977342c3b41feb5e`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/e2b767ba5ced6f1f83cfeed3977342c3b41feb5e)
+- **Date:** 2026-10-24
+- **Change:** Use new 272.jpg image on news page 
