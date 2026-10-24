@@ -285,3 +285,9 @@ This file is maintained automatically by GitHub Actions for commits pushed to `m
 - **Commit No.:** [`a9e1e5d082df382505d8c3da3dd52fcf5a2b82b1`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/a9e1e5d082df382505d8c3da3dd52fcf5a2b82b1)
 - **Date:** 2026-10-24
 - **Change:** Add explicit favicon link for GitHub Pages 
+
+### v1.0.46
+- **Serial No.:** RN-23267035
+- **Commit No.:** [`b2cc926c14943ac8713bbae3a14fded37099c136`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/b2cc926c14943ac8713bbae3a14fded37099c136)
+- **Date:** 2026-10-24
+- **Change:** Add favicon link to certificates.html 
