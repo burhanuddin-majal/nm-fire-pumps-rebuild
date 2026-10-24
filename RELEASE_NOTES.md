@@ -10,6 +10,12 @@ This file is maintained automatically by GitHub Actions for commits pushed to `m
 
 ## Release History
 
+### v1.0.58
+- **Serial No.:** RN-43608311
+- **Commit No.:** [`c506bb3af10eb5f5eee983320af077e232e5916f`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/c506bb3af10eb5f5eee983320af077e232e5916f)
+- **Date:** 2026-10-24
+- **Change:** fix: remove homepage hero caption text 
+
 ### v1.0.57
 - **Serial No.:** RN-75605224
 - **Commit No.:** [`6303c54d3e621b66e61018ab979803a24c30dc98`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/6303c54d3e621b66e61018ab979803a24c30dc98)
