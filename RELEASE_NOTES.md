@@ -219,3 +219,9 @@ This file is maintained automatically by GitHub Actions for commits pushed to `m
 - **Commit No.:** [`59aee33934b66f84d82a1c1fdee5a317479ab94f`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/59aee33934b66f84d82a1c1fdee5a317479ab94f)
 - **Date:** 2026-10-24
 - **Change:** Clarify website preview status in README 
+
+### v1.0.35
+- **Serial No.:** RN-47665493
+- **Commit No.:** [`d0a6e7980f1810f62d27c3132d3d72fef3848bad`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/d0a6e7980f1810f62d27c3132d3d72fef3848bad)
+- **Date:** 2026-10-24
+- **Change:** Remove obsolete beta file: beta/video.html 
