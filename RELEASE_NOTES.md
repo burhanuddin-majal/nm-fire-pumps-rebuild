@@ -10,6 +10,12 @@ This file is maintained automatically by GitHub Actions for commits pushed to `m
 
 ## Release History
 
+### v1.0.57
+- **Serial No.:** RN-75605224
+- **Commit No.:** [`6303c54d3e621b66e61018ab979803a24c30dc98`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/6303c54d3e621b66e61018ab979803a24c30dc98)
+- **Date:** 2026-10-24
+- **Change:** revert: remove File Manager Bot workflow 
+
 ### v1.0.56
 - **Serial No.:** RN-26614472
 - **Commit No.:** [`0ee53ac2a4b7dc3174f89bce40b818bde0b6e484`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/0ee53ac2a4b7dc3174f89bce40b818bde0b6e484)
