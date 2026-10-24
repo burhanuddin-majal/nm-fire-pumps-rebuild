@@ -71,56 +71,69 @@ body .brand-logo{display:block;width:190px!important;max-width:190px!important;h
 @media(max-width:800px){.strength-intro-grid,.strength-feature,.strength-split,.strength-training-grid{grid-template-columns:1fr;gap:30px}.strength-gallery{grid-template-columns:1fr 1fr}.strength-photo-main{height:330px}.strength-training-grid>img{height:300px}.strength-cta-inner{align-items:flex-start;flex-direction:column}}
 @media(max-width:520px){.strength-hero{min-height:540px}.strength-hero-content{padding-top:50px;padding-bottom:85px}.strength-gallery{grid-template-columns:1fr}.strength-gallery img{height:230px}.strength-photo-stack{padding-right:25px}.strength-photo-small{width:55%;height:135px;border-width:5px}.strength-cta{padding:45px 0}}
 
-/* Hover and keyboard-accessible navigation dropdowns */
-.nav-dropdown{position:relative;display:flex;align-items:center}
-.nav .nav-dropdown-toggle{display:inline-flex;align-items:center;gap:7px;padding:12px 0;white-space:nowrap}
-.dropdown-caret{font-size:10px;transition:transform .18s ease}
-.dropdown-menu{position:absolute;top:100%;left:-14px;min-width:245px;max-height:min(70vh,520px);overflow-y:auto;padding:9px;background:#fff;border:1px solid #e2e8eb;box-shadow:0 18px 38px #10232d1f;border-top:3px solid var(--red);display:none;z-index:50}
-.dropdown-menu a{display:block;padding:10px 12px;color:var(--ink);font-size:12px;line-height:1.35;font-weight:600;border-bottom:1px solid #eef1f2;white-space:normal}
-.dropdown-menu a:last-child{border-bottom:0}
-.dropdown-menu a:hover,.dropdown-menu a:focus-visible{background:#f6f8f9;color:var(--red)}
-.nav-dropdown:hover .dropdown-menu,.nav-dropdown:focus-within .dropdown-menu{display:block}
-.nav-dropdown:hover .dropdown-caret,.nav-dropdown:focus-within .dropdown-caret{transform:rotate(180deg)}
-@media(max-width:720px){
- .nav-dropdown{display:block;width:100%;border-bottom:1px solid #edf0f1}
- .nav .nav-dropdown-toggle{display:flex;width:100%;justify-content:space-between;padding:12px 5px;border:0}
- .dropdown-menu{position:static;display:block;max-height:none;overflow:visible;box-shadow:none;border:0;border-top:1px solid #edf0f1;padding:0 0 8px 12px}
- .dropdown-menu a{padding:10px 12px;font-size:12px}
- .dropdown-caret{transform:rotate(180deg)}
+/* Stable design-system polish: consistent interaction, spacing and navigation */
+:root{
+  --shadow-soft:0 8px 24px rgba(16,35,45,.07);
+  --shadow-lift:0 16px 38px rgba(16,35,45,.12);
+  --focus-ring:0 0 0 3px rgba(229,72,53,.24);
 }
-@media(prefers-reduced-motion:reduce){.dropdown-caret{transition:none}}
-
-/* About Us and Products dropdown navigation, inspired by nmfirepumps.com */
-.nav-dropdown{position:relative;display:flex;align-items:center}
-.nav .nav-dropdown>a{display:inline-flex;align-items:center;gap:7px;padding:12px 0;white-space:nowrap}
-.dropdown-caret{font-size:10px;transition:transform .18s ease}
-.dropdown-menu{position:absolute;top:100%;left:-14px;min-width:245px;max-height:min(70vh,520px);overflow-y:auto;padding:9px;background:#fff;border:1px solid #e2e8eb;border-top:3px solid var(--red);box-shadow:0 18px 38px #10232d1f;display:none;z-index:50}
-.dropdown-menu a{display:block;padding:10px 12px;color:var(--ink);font-size:12px;line-height:1.35;font-weight:600;border-bottom:1px solid #eef1f2;white-space:normal}
-.dropdown-menu a:last-child{border-bottom:0}
-.dropdown-menu a:hover,.dropdown-menu a:focus-visible{background:#f6f8f9;color:var(--red)}
-.nav-dropdown:hover .dropdown-menu,.nav-dropdown:focus-within .dropdown-menu{display:block}
-.nav-dropdown:hover .dropdown-caret,.nav-dropdown:focus-within .dropdown-caret{transform:rotate(180deg)}
-@media(max-width:720px){.nav-dropdown{display:block;width:100%;border-bottom:1px solid #edf0f1}.nav .nav-dropdown>a{display:flex;width:100%;justify-content:space-between;padding:12px 5px;border:0}.dropdown-menu{position:static;display:block;max-height:none;overflow:visible;box-shadow:none;border:0;border-top:1px solid #edf0f1;padding:0 0 8px 12px}.dropdown-menu a{padding:10px 12px;font-size:12px}.dropdown-caret{transform:rotate(180deg)}}
-@media(prefers-reduced-motion:reduce){.dropdown-caret{transition:none}}
-
-/* Compact, conventional dropdowns for Products and About Us */
+html{scroll-padding-top:112px}
+body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+button,input,select,textarea{font:inherit}
+a,button{ -webkit-tap-highlight-color:transparent }
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{
+  outline:2px solid var(--red);outline-offset:3px
+}
+button:disabled{opacity:.65;cursor:not-allowed}
+.header{box-shadow:0 3px 16px rgba(16,35,45,.035)}
+.nav{gap:clamp(10px,1.35vw,20px)}
+.nav>a,.nav .nav-dropdown-toggle{transition:color .16s ease}
+.nav>a.active,.nav>a:hover,.nav .nav-dropdown-toggle:hover,.nav .nav-dropdown-toggle:focus-visible{color:var(--red)}
+.nav .nav-cta{border:1px solid var(--red);transition:background .18s ease,transform .18s ease,box-shadow .18s ease}
+.nav .nav-cta:hover{background:var(--red-dark);box-shadow:0 6px 16px rgba(229,72,53,.2);transform:translateY(-1px)}
+.btn{border-radius:2px;transition:background .18s ease,border-color .18s ease,color .18s ease,transform .18s ease,box-shadow .18s ease}
+.btn:hover{box-shadow:0 8px 20px rgba(16,35,45,.13)}
+.btn:focus-visible,.nav .nav-cta:focus-visible{outline-offset:4px}
+.product-card,.application-grid article,.resource-card,.project-item,.category,.detail-panel,.strength-gallery figure,.about-cap-grid article{
+  transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease
+}
+.product-card:hover,.application-grid article:hover,.project-item:hover,.category:hover,.about-cap-grid article:hover{
+  border-color:#cbd5d9;box-shadow:var(--shadow-soft)
+}
+.resource-card:hover{box-shadow:var(--shadow-soft);transform:translateY(-2px)}
+.product-card:focus-within,.resource-card:focus-within,.project-item:focus-within{outline:2px solid rgba(229,72,53,.35);outline-offset:2px}
+.section{scroll-margin-top:110px}
+table th{font-weight:800;color:var(--ink)}
+.form-field input:focus,.form-field select:focus,.form-field textarea:focus,.nm-ai-input:focus{
+  outline:0;border-color:var(--red);box-shadow:var(--focus-ring)
+}
+.form-field input,.form-field select,.form-field textarea{border-radius:2px;transition:border-color .18s ease,box-shadow .18s ease}
+.dropdown-caret{display:inline-block;font-size:10px;color:#74818a;transition:transform .16s ease}
 .nav-dropdown{position:relative;display:flex;align-items:center;height:100%}
 .nav .nav-dropdown-toggle{display:inline-flex;align-items:center;gap:6px;padding:12px 0;white-space:nowrap}
-.dropdown-caret{font-size:10px;color:#74818a;transition:transform .15s ease}
-.dropdown-menu{position:absolute;top:calc(100% - 1px);left:-12px;display:none;width:255px;max-height:70vh;overflow-y:auto;padding:6px 0;background:#fff;border:1px solid #e1e6e9;border-top:2px solid var(--red);box-shadow:0 10px 24px rgba(16,35,45,.14);z-index:100}
-.dropdown-menu a{display:block;padding:10px 16px;color:var(--ink);font-size:12px;line-height:1.4;font-weight:600;border-bottom:1px solid #f0f2f3;white-space:normal}
+.dropdown-menu{
+  position:absolute;top:calc(100% - 1px);left:-12px;display:none;width:255px;
+  max-height:70vh;overflow-y:auto;padding:6px 0;background:#fff;
+  border:1px solid #e1e6e9;border-top:2px solid var(--red);
+  box-shadow:0 14px 30px rgba(16,35,45,.15);z-index:100
+}
+.dropdown-menu a{display:block;padding:10px 16px;color:var(--ink);font-size:12px;line-height:1.4;font-weight:600;border-bottom:1px solid #f0f2f3;white-space:normal;transition:background .15s ease,color .15s ease}
 .dropdown-menu a:last-child{border-bottom:0}
 .dropdown-menu a:hover,.dropdown-menu a:focus-visible{background:#f5f7f8;color:var(--red)}
-.nav-dropdown:hover .dropdown-menu,.nav-dropdown:focus-within .dropdown-menu{display:block}
-.nav-dropdown:hover .dropdown-caret,.nav-dropdown:focus-within .dropdown-caret{transform:rotate(180deg)}
-@media(max-width:1000px) and (min-width:721px){.nav-dropdown .dropdown-menu{left:auto;right:-12px}}
+.nav-dropdown:hover .dropdown-menu,.nav-dropdown:focus-within .dropdown-menu,.nav-dropdown.is-expanded .dropdown-menu{display:block}
+.nav-dropdown:hover .dropdown-caret,.nav-dropdown:focus-within .dropdown-caret,.nav-dropdown.is-expanded .dropdown-caret{transform:rotate(180deg)}
+@media(max-width:1000px) and (min-width:721px){.nav{gap:9px;font-size:10px}.nav-dropdown .dropdown-menu{left:auto;right:-12px}.nav .nav-cta{padding:10px 11px}}
 @media(max-width:720px){
- .nav-dropdown{display:block;width:100%;height:auto;border-bottom:1px solid #edf0f1}
- .nav .nav-dropdown-toggle{display:flex;width:100%;justify-content:space-between;padding:12px 5px}
- .dropdown-menu{position:static;display:none;width:100%;max-height:none;overflow:visible;box-shadow:none;border:0;border-top:1px solid #edf0f1;padding:4px 0 8px 10px}
- .nav-dropdown:hover .dropdown-menu,.nav-dropdown:focus-within .dropdown-menu{display:block}
- .dropdown-menu a{padding:9px 12px;border-bottom:0;font-size:12px}
- .dropdown-caret{transition:transform .15s ease}
- .nav-dropdown:hover .dropdown-caret,.nav-dropdown:focus-within .dropdown-caret{transform:rotate(180deg)}
+  .nav-dropdown{display:block;width:100%;height:auto;border-bottom:1px solid #edf0f1}
+  .nav .nav-dropdown-toggle{display:flex;width:100%;justify-content:space-between;padding:12px 5px}
+  .dropdown-menu{position:static;display:none;width:100%;max-height:none;overflow:visible;box-shadow:none;border:0;border-top:1px solid #edf0f1;padding:4px 0 8px 10px}
+  .nav-dropdown.is-expanded .dropdown-menu,.nav-dropdown:focus-within .dropdown-menu{display:block}
+  .nav-dropdown:hover .dropdown-menu{display:none}
+  .nav-dropdown.is-expanded:hover .dropdown-menu{display:block}
+  .dropdown-menu a{padding:9px 12px;border-bottom:0;font-size:12px}
+  .nav .nav-cta{margin-top:10px}
+  .section{scroll-margin-top:85px}
 }
-@media(prefers-reduced-motion:reduce){.dropdown-caret{transition:none}}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
