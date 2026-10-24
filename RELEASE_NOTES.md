@@ -315,3 +315,9 @@ This file is maintained automatically by GitHub Actions for commits pushed to `m
 - **Commit No.:** [`ce203e5c47c57858a727b7bd516821fdf290ea33`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/ce203e5c47c57858a727b7bd516821fdf290ea33)
 - **Date:** 2026-10-24
 - **Change:** Fix Pages workflow and add retrying availability checks 
+
+### v1.0.51
+- **Serial No.:** RN-64496468
+- **Commit No.:** [`bd29c44476df52e6a8f9a49f67801ba844b19c01`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/bd29c44476df52e6a8f9a49f67801ba844b19c01)
+- **Date:** 2026-10-24
+- **Change:** Change brand logo image in video.html 
