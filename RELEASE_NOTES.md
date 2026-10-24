@@ -231,3 +231,9 @@ This file is maintained automatically by GitHub Actions for commits pushed to `m
 - **Commit No.:** [`854144a8547d96386f7c16d3f501cf41115b4fd6`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/854144a8547d96386f7c16d3f501cf41115b4fd6)
 - **Date:** 2026-10-24
 - **Change:** Remove obsolete preview folder from README structure 
+
+### v1.0.37
+- **Serial No.:** RN-47591896
+- **Commit No.:** [`543be1d953d30b750f7329eb6a1bc6b4acf68fc2`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/543be1d953d30b750f7329eb6a1bc6b4acf68fc2)
+- **Date:** 2026-10-24
+- **Change:** Standardize stable navigation on index.html 
