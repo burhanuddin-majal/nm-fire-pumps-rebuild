@@ -273,3 +273,9 @@ This file is maintained automatically by GitHub Actions for commits pushed to `m
 - **Commit No.:** [`0d3a38dcf3b93324547892e3e15017b1bd9e02f7`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/0d3a38dcf3b93324547892e3e15017b1bd9e02f7)
 - **Date:** 2026-10-24
 - **Change:** Restore original SVG logo on video page 
+
+### v1.0.44
+- **Serial No.:** RN-23795557
+- **Commit No.:** [`860fea94a032095407a924b25f620b031abb5b6e`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/860fea94a032095407a924b25f620b031abb5b6e)
+- **Date:** 2026-10-24
+- **Change:** Change News page logo to 272.jpg 
