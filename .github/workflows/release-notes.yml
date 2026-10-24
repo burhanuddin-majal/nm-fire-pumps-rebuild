@@ -50,26 +50,25 @@ jobs:
           if [[ -z "$current_version" ]]; then current_version="1.0.0"; fi
           IFS='.' read -r major minor patch <<< "$current_version"
 
+          NEW_ENTRIES="$(mktemp)"
           for commit in "${commits[@]}"; do
-            if grep -Fq "$commit" "$NOTES"; then
-              continue
-            fi
-
+            if grep -Fq "$commit" "$NOTES"; then continue; fi
             patch=$((patch + 1))
             version="v${major}.${minor}.${patch}"
-            serial="RN-$(od -An -N4 -tu4 /dev/urandom | tr -d ' ' | awk '{printf "%08d", $1 % 100000000}')"
+            serial="RN-$(od -An -N4 -tu4 /dev/urandom | tr -d " " | awk '{printf "%08d", $1 % 100000000}')"
             short_message="$(git show -s --format=%s "$commit" | tr '\n' ' ' | sed 's/|/\\|/g')"
             commit_date="$(git show -s --format=%cs "$commit")"
-
             {
               printf '\n### %s\n' "$version"
               printf -- '- **Serial No.:** %s\n' "$serial"
               printf -- '- **Commit No.:** [`%s`](https://github.com/%s/commit/%s)\n' "$commit" "$GITHUB_REPOSITORY" "$commit"
               printf -- '- **Date:** %s\n' "$commit_date"
               printf -- '- **Change:** %s\n' "$short_message"
-            } >> "$NOTES"
+            } >> "$NEW_ENTRIES"
           done
-
+          if [[ ! -s "$NEW_ENTRIES" ]]; then echo "No new commits to record."; exit 0; fi
+          awk -v entries_file="$NEW_ENTRIES" '/^## Release History$/ { print; while ((getline line < entries_file) > 0) print line; close(entries_file); next } { print }' "$NOTES" > "${NOTES}.tmp"
+          mv "${NOTES}.tmp" "$NOTES"
           if git diff --quiet -- "$NOTES"; then
             echo "No new commits to record."
             exit 0
