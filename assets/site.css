@@ -137,3 +137,46 @@ table th{font-weight:800;color:var(--ink)}
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
 }
+
+
+/* Mobile usability fixes — preserve the existing visual design */
+@media (max-width: 720px) {
+  html { scroll-padding-top: 88px; }
+  body { overflow-wrap: break-word; }
+  img, video, iframe, canvas, svg { max-width: 100%; }
+  .wrap { width: min(100% - 28px, var(--max)); }
+  .brand-logo { width: min(190px, 52vw) !important; max-width: 52vw !important; }
+  .navrow { gap: 12px; }
+  .menu-toggle { min-width: 44px; min-height: 44px; padding: 8px; flex-shrink: 0; cursor: pointer; }
+  .nav { max-height: calc(100dvh - 72px); overflow-y: auto; overscroll-behavior: contain; }
+  .nav > a, .nav .nav-dropdown-toggle { min-height: 44px; }
+  .dropdown-menu a { min-height: 40px; display: flex; align-items: center; }
+  .hero { min-height: min(570px, 78svh); }
+  .hero-content { padding-top: 36px; padding-bottom: 88px; }
+  .hero h1, .page-hero h1, .about-hero-copy h1, .strength-hero h1 { overflow-wrap: anywhere; }
+  .hero-actions .btn, .contact-band-inner .btn, .strength-cta-inner .btn { min-height: 44px; }
+  .hero-caption { gap: 12px; flex-wrap: wrap; }
+  .trust-grid { gap: 16px 10px; }
+  .trust-grid div { min-width: 0; }
+  .section-head { gap: 20px; }
+  .content-layout, .detail-layout, .detail-spec-grid, .form-grid { min-width: 0; }
+  .content, .detail-panel, .detail-sidebar, .category, .project-item { min-width: 0; }
+  .table-wrap { max-width: 100%; -webkit-overflow-scrolling: touch; }
+  table { min-width: 560px; }
+  .form-field input, .form-field select, .form-field textarea { min-height: 44px; font-size: 16px; }
+  .form-field textarea { min-height: 140px; }
+  .btn { min-height: 44px; max-width: 100%; flex-wrap: wrap; }
+  .download-item { flex-wrap: wrap; }
+  .download-item a { min-height: 40px; display: inline-flex; align-items: center; }
+  .nm-ai-launch { right: 14px; bottom: 14px; max-width: calc(100vw - 28px); }
+  .nm-ai-panel { right: 10px; bottom: 72px; width: calc(100vw - 20px); height: min(590px, calc(100dvh - 90px)); }
+}
+@media (max-width: 380px) {
+  .wrap { width: calc(100% - 24px); }
+  .brand-logo { width: min(160px, 48vw) !important; max-width: 48vw !important; }
+  .hero h1 { font-size: clamp(34px, 10vw, 42px); }
+  .hero-caption { font-size: 8px; }
+  .trust-grid strong { font-size: 19px; }
+  .page-hero { padding: 38px 0; }
+  .side-nav { grid-template-columns: 1fr; }
+}
