@@ -2,14 +2,15 @@
 
 A responsive, static reference-style website rebuild for **CNP NM Fire-fighting System Co., Ltd.** The project includes product information, company pages, technical resources, a contact form, and an on-site website issue-reporting form.
 
-- **Stable website:** https://burhanuddin-majal.github.io/nm-fire-pumps-rebuild/
-- **Beta preview:** https://burhanuddin-majal.github.io/nm-fire-pumps-rebuild/beta/
+- **Preview website:** https://burhanuddin-majal.github.io/nm-fire-pumps-rebuild/
 - **Official NM Fire website:** https://www.nmfirepumps.com/
 - **Repository:** https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild
 
-## Beta Version Warning
+## Preview Website Notice
 
-**The Beta version may contain errors, bugs, incomplete features, or compatibility issues. We recommend using the Stable version for normal use.** If an error or bug occurs on your device or in your browser while using Beta, you use it at your own risk. To the maximum extent permitted by applicable law, the project owner is not responsible for issues, damage, or loss arising from use of the Beta version. This notice does not exclude any responsibility that cannot legally be excluded.
+**This website is a preview rebuild and is not yet the officially published production website.** It may contain unfinished content, bugs, inaccurate information, or features that have not been fully tested. Until this preview is formally reviewed, approved, and published, we recommend using the official NM Fire website for current company information and enquiries. Once this rebuild has been officially published and verified, we recommend using the published website.
+
+Do not rely on this preview for engineering, safety, procurement, or other critical decisions. Confirm current product specifications, certifications, and company information directly with NM Fire and the relevant issuing organizations.
 
 ## Abuse, Spam, and Network Blocking Policy
 
@@ -18,14 +19,6 @@ Please use the website and its forms responsibly. Do not submit spam, repeated i
 Where technically available and legally permitted, the site operator may use IP-address blocking, VPN/proxy access restrictions, and network or device-related signals to detect and limit repeated abuse or attempts to bypass restrictions. These methods may not identify every attempt and do not guarantee that a particular person or device can be identified. Do not attempt to evade a block. Any collection or use of technical data remains subject to applicable law and the site's actual configuration.
 
 **Important:** This section describes the site's abuse policy; it does not mean that IP blocking, VPN blocking, or device/network detection is already implemented or active. Those controls must be separately configured and tested before they can be relied on.
-
-## Beta AI Product Assistant
-
-The Beta pages now include a floating **Ask NM Fire AI** chat interface. Its backend lives separately in `ai-worker/` and is designed to ground answers in the site's published pages and product-detail data. It is instructed not to invent missing ratings, standards, approvals, or model specifications, and to refer uncertain selections to the manufacturer and project engineer.
-
-**Setup status:** the chat interface and backend source are committed, but the AI service is not live yet. The site owner must deploy the Cloudflare Worker, configure the provider API key as a Worker secret and choose a supported model, then replace the placeholder `CHAT_API_URL` in `beta/assets/site.js` with the deployed endpoint. Do not put API keys in frontend files or commit them to GitHub. AI provider usage may cost money.
-
-Backend deployment steps are in [ai-worker/README.md](ai-worker/README.md). This feature is Beta-only; Stable pages have not been changed.
 
 ## Stable website pages
 
@@ -121,13 +114,10 @@ Backend deployment steps are in [ai-worker/README.md](ai-worker/README.md). This
 - `assets/site.js` — navigation, slideshow, shared form submission, and small page interactions.
 - `assets/product-detail.js` — product detail content and page rendering.
 - `assets/272.jpg` — current logo image used across the site.
-- `beta/assets/` — Beta snapshot's matching shared assets. Keep these aligned with the Beta pages when editing the preview.
 
-### Beta versus Stable
+### Website status
 
-The repository's default branch is `main`. The root-level pages are the **Stable Production** site; `beta/` is a preview snapshot hosted at the Beta URL above, not a separate Git branch.
-
-Make Beta-only changes under `beta/`. Promote changes to the root-level Stable files only when explicitly approved. Keep relative asset and page links appropriate to each location.
+The repository's default branch is `main`. Root-level pages are the current website preview. The separate `beta/` snapshot has been removed to avoid confusion. This repository should be treated as a preview until the rebuild is formally reviewed, approved, and published.
 
 ## Forms and email delivery
 
@@ -148,7 +138,7 @@ FormSubmit may require recipient/endpoint activation before delivery works. A co
 
 ## Technology and local preview
 
-This is a static website built with HTML, CSS, and vanilla JavaScript. There is no package installation or build step required for the website itself.
+This is a static website preview built with HTML, CSS, and vanilla JavaScript. There is no package installation or build step required for the website itself.
 
 1. Clone the repository.
 2. Open the project folder in a code editor.
