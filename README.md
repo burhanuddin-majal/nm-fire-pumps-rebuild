@@ -62,27 +62,6 @@ Where technically available and legally permitted, the site operator may use IP-
 │   ├── product-detail.js
 │   ├── site.css
 │   └── site.js
-├── beta/
-│   ├── assets/
-│   │   ├── product-detail.js
-│   │   ├── site.css
-│   │   └── site.js
-│   ├── about.html
-│   ├── calculators.html
-│   ├── certificates.html
-│   ├── contact.html
-│   ├── fire-protection-consulting.html
-│   ├── index.html
-│   ├── news.html
-│   ├── product-detail.html
-│   ├── products.html
-│   ├── projects.html
-│   ├── report-issue.html
-│   ├── resources.html
-│   ├── sitemap.html
-│   ├── strength.html
-│   ├── training.html
-│   └── video.html
 ├── worker/
 │   ├── index.js
 │   └── wrangler.toml
@@ -117,7 +96,7 @@ Where technically available and legally permitted, the site operator may use IP-
 
 ### Website status
 
-The repository's default branch is `main`. Root-level pages are the current website preview. The separate `beta/` snapshot has been removed to avoid confusion. This repository should be treated as a preview until the rebuild is formally reviewed, approved, and published.
+The repository's default branch is `main`. Root-level pages are the current website preview. No separate preview snapshot is maintained. This repository should be treated as a preview until the rebuild is formally reviewed, approved, and published.
 
 ## Forms and email delivery
 
