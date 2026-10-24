@@ -1,0 +1,67 @@
+name: Deploy website to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  workflow_run:
+    workflows: ["Pages Build and Deployment"]
+    types: [completed]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  actions: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'failure'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload website files
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deploy with up to 3 attempts
+        id: deployment
+        uses: nick-fields/retry@v3
+        with:
+          timeout_minutes: 5
+          max_attempts: 3
+          retry_wait_seconds: 15
+          command: echo "This retry wrapper is used for the deployment command below."
+
+      - name: Deploy to GitHub Pages
+        id: pages_deploy
+        uses: actions/deploy-pages@v4
+
+      - name: Verify published site
+        shell: bash
+        run: |
+          set -euo pipefail
+          URL="${{ steps.pages_deploy.outputs.page_url }}"
+          for attempt in 1 2 3 4 5 6; do
+            if curl --fail --silent --show-error --location --max-time 20 "$URL" -o /dev/null; then
+              echo "Deployment is reachable: $URL"
+              exit 0
+            fi
+            echo "Site not ready yet (check $attempt/6); waiting 15 seconds..."
+            sleep 15
+          done
+          echo "The deployed site did not become reachable after 6 checks."
+          exit 1
