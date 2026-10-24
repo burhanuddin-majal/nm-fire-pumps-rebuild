@@ -255,3 +255,9 @@ This file is maintained automatically by GitHub Actions for commits pushed to `m
 - **Commit No.:** [`0346bda0b24118699d9c95a00686a4fb88acfae4`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/0346bda0b24118699d9c95a00686a4fb88acfae4)
 - **Date:** 2026-10-24
 - **Change:** Standardize stable navigation on index.html 
+
+### v1.0.41
+- **Serial No.:** RN-40754396
+- **Commit No.:** [`f0ccb8979cc97544a3a1f070be288e75b1f9ddaa`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/f0ccb8979cc97544a3a1f070be288e75b1f9ddaa)
+- **Date:** 2026-10-24
+- **Change:** Remove obsolete Beta label from issue report page 
