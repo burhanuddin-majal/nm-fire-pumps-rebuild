@@ -207,3 +207,9 @@ This file is maintained automatically by GitHub Actions for commits pushed to `m
 - **Commit No.:** [`8a6fd5ebc9c74ada6dd380d2f3e7d5dc96b63600`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/8a6fd5ebc9c74ada6dd380d2f3e7d5dc96b63600)
 - **Date:** 2026-10-23
 - **Change:** Fix Strength page navigation dropdowns 
+
+### v1.0.33
+- **Serial No.:** RN-44999332
+- **Commit No.:** [`607e9a4b982dcf181a84fdd8c4a338779f01ca88`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/607e9a4b982dcf181a84fdd8c4a338779f01ca88)
+- **Date:** 2026-10-24
+- **Change:** Normalize dropdown toggle styling on stable homepage 
