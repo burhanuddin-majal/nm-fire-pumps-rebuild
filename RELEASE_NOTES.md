@@ -10,6 +10,12 @@ This file is maintained automatically by GitHub Actions for commits pushed to `m
 
 ## Release History
 
+### v1.0.66
+- **Serial No.:** RN-17222494
+- **Commit No.:** [`e1ff1575278c8891ce38b6f8638ec8d386789e1c`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/e1ff1575278c8891ce38b6f8638ec8d386789e1c)
+- **Date:** 2026-10-25
+- **Change:** Use supplied official news thumbnail images 
+
 ### v1.0.65
 - **Serial No.:** RN-67911639
 - **Commit No.:** [`f313645c9f65edf1fd9b1e5a93a215e7ebd1d962`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/f313645c9f65edf1fd9b1e5a93a215e7ebd1d962)
