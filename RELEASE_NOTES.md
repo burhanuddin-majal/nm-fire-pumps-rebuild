@@ -10,6 +10,12 @@ This file is maintained automatically by GitHub Actions for commits pushed to `m
 
 ## Release History
 
+### v1.0.60
+- **Serial No.:** RN-75828220
+- **Commit No.:** [`95830f531a4a995c94e56c842fb108eddb0bc55b`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/95830f531a4a995c94e56c842fb108eddb0bc55b)
+- **Date:** 2026-10-25
+- **Change:** feat: recreate NM Fire university training page content 
+
 ### v1.0.59
 - **Serial No.:** RN-80122996
 - **Commit No.:** [`579116d01ad26b6fdf7c34c6cdd3b2da72e75de6`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/579116d01ad26b6fdf7c34c6cdd3b2da72e75de6)
