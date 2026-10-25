@@ -10,6 +10,12 @@ This file is maintained automatically by GitHub Actions for commits pushed to `m
 
 ## Release History
 
+### v1.0.70
+- **Serial No.:** RN-64474237
+- **Commit No.:** [`f8f801cc84fbfa6880a45d02b60b0e8ba8fcdc4b`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/f8f801cc84fbfa6880a45d02b60b0e8ba8fcdc4b)
+- **Date:** 2026-10-25
+- **Change:** Improve NM Fire AI website knowledge retrieval 
+
 ### v1.0.69
 - **Serial No.:** RN-03321480
 - **Commit No.:** [`e766bad6eedfdac2b59103d4c656df2805579ee6`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/e766bad6eedfdac2b59103d4c656df2805579ee6)
