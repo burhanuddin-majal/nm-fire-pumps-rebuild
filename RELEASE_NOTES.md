@@ -10,6 +10,12 @@ This file is maintained automatically by GitHub Actions for commits pushed to `m
 
 ## Release History
 
+### v1.0.72
+- **Serial No.:** RN-99645554
+- **Commit No.:** [`7fdd2a2118336d245336da910fc77310ce33c595`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/7fdd2a2118336d245336da910fc77310ce33c595)
+- **Date:** 2026-10-25
+- **Change:** Prioritize product standards in NM Fire AI context 
+
 ### v1.0.71
 - **Serial No.:** RN-32793121
 - **Commit No.:** [`b556f75b5cf1dc3277718dac92242335be77f24d`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/b556f75b5cf1dc3277718dac92242335be77f24d)
