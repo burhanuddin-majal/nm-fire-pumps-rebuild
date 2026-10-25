@@ -10,6 +10,12 @@ This file is maintained automatically by GitHub Actions for commits pushed to `m
 
 ## Release History
 
+### v1.0.74
+- **Serial No.:** RN-31075545
+- **Commit No.:** [`3d5e86ade398001e49b0efe582e5800c70bba979`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/3d5e86ade398001e49b0efe582e5800c70bba979)
+- **Date:** 2026-10-25
+- **Change:** Remove factory address and owner phone numbers from contact page 
+
 ### v1.0.73
 - **Serial No.:** RN-83754044
 - **Commit No.:** [`ac64834b448bfa7916244fc9d1e64e45ac50caa3`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/ac64834b448bfa7916244fc9d1e64e45ac50caa3)
