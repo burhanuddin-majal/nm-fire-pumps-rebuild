@@ -38,7 +38,7 @@ async function getWebsiteContext() {
       ).join("\n\n").slice(0,24000);
     }
   } catch { productContext = "Product detail data could not be loaded; do not guess missing specifications."; }
-  return (pages.filter(Boolean).join("\n\n")+"\n\n"+productContext).slice(0,52000);
+  return (productContext+"\n\n"+pages.filter(Boolean).join("\n\n")).slice(0,52000);
 }
 export default {
   async fetch(request, env) {
