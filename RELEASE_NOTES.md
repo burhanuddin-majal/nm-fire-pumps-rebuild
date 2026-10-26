@@ -10,6 +10,12 @@ This file is maintained automatically by GitHub Actions for commits pushed to `m
 
 ## Release History
 
+### v1.0.87
+- **Serial No.:** RN-40746217
+- **Commit No.:** [`4fba5ef0c9c9532fbe4ed44a7c03190b16b165af`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/4fba5ef0c9c9532fbe4ed44a7c03190b16b165af)
+- **Date:** 2026-10-26
+- **Change:** Add Gemini API key provider support 
+
 ### v1.0.86
 - **Serial No.:** RN-44182245
 - **Commit No.:** [`04693e7552b7472b7c343c074153ff89d483fa88`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/04693e7552b7472b7c343c074153ff89d483fa88)
