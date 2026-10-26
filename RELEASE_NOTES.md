@@ -10,6 +10,12 @@ This file is maintained automatically by GitHub Actions for commits pushed to `m
 
 ## Release History
 
+### v1.0.75
+- **Serial No.:** RN-13821203
+- **Commit No.:** [`37c2476b3365d9417097b937b5a711f1c154dc54`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/37c2476b3365d9417097b937b5a711f1c154dc54)
+- **Date:** 2026-10-26
+- **Change:** Add custom 404 page for missing URLs 
+
 ### v1.0.74
 - **Serial No.:** RN-31075545
 - **Commit No.:** [`3d5e86ade398001e49b0efe582e5800c70bba979`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/3d5e86ade398001e49b0efe582e5800c70bba979)
