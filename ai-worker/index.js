@@ -53,7 +53,7 @@ async function getOfficialDatasheets(message) {
     const base = new URL("assets/datasheets/", SITE_BASE).href;
     const query = String(message || "").toLowerCase();
     const scored = items.map(item => {
-      if (!item || typeof item.filename !== "string" || !/^[a-z0-9][a-z0-9._-]*\\.pdf$/i.test(item.filename)) return null;
+      if (!item || typeof item.filename !== "string" || !/^[a-z0-9][a-z0-9._-]*\.pdf$/i.test(item.filename)) return null;
       const url = new URL(item.filename, base);
       if (url.origin !== new URL(SITE_BASE).origin || !url.href.startsWith(base)) return null;
       const keywords = Array.isArray(item.keywords) ? item.keywords.filter(k=>typeof k==="string").slice(0,30) : [];
