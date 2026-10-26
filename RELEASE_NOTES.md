@@ -10,6 +10,12 @@ This file is maintained automatically by GitHub Actions for commits pushed to `m
 
 ## Release History
 
+### v1.0.91
+- **Serial No.:** RN-59060952
+- **Commit No.:** [`79a603b42eab7eb2136025dd7201c7e2daf27d85`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/79a603b42eab7eb2136025dd7201c7e2daf27d85)
+- **Date:** 2026-10-26
+- **Change:** Fix Gemini worker escaping and website context parsing 
+
 ### v1.0.90
 - **Serial No.:** RN-20582645
 - **Commit No.:** [`44e515cfec673c81e2038a8cef96992fed7286c0`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/44e515cfec673c81e2038a8cef96992fed7286c0)
