@@ -134,7 +134,8 @@ export default {
       const rawAnswer = result.candidates?.[0]?.content?.parts?.map(part=>part.text || "").join("\n") || "";
       if (!upstream.ok) {
         console.error("Gemini API error", JSON.stringify({model,status:upstream.status,error:result.error || result}));
-        return new Response(JSON.stringify({error:"The AI provider returned an error. Please check the provider, model, and API key settings, then try again."}),{status:502,headers});
+        const providerMessage = typeof result.error?.message === "string" ? result.error.message.slice(0,240) : "Unknown Gemini API error.";
+        return new Response(JSON.stringify({error:"Gemini API error ("+upstream.status+"): "+providerMessage}),{status:502,headers});
       }
       const answer = typeof rawAnswer === "string" ? rawAnswer : "";
       if (!answer.trim()) {
