@@ -1,0 +1,4 @@
+{
+  "documents": [],
+  "instructions": "Admin-managed official PDF datasheets. Add each approved PDF to this folder and list its exact filename here. Keep filenames lowercase and use .pdf. Optional title and keywords help the AI select relevant documents. Only official, approved documents should be added."
+}
