@@ -10,6 +10,12 @@ This file is maintained automatically by GitHub Actions for commits pushed to `m
 
 ## Release History
 
+### v1.0.93
+- **Serial No.:** RN-02645248
+- **Commit No.:** [`f1f421b588fcec339e5ac7f12328554c5d5d4607`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/f1f421b588fcec339e5ac7f12328554c5d5d4607)
+- **Date:** 2026-10-26
+- **Change:** Expose safe Gemini API diagnostics in error response 
+
 ### v1.0.92
 - **Serial No.:** RN-32393935
 - **Commit No.:** [`e123c08434e9c92b51d1e81a7cdb73122d3fca94`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/e123c08434e9c92b51d1e81a7cdb73122d3fca94)
