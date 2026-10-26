@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,follow">
+<meta name="theme-color" content="#10232d">
+<title>404 — Page Not Found | NM Fire</title>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+.error-page{min-height:calc(100vh - 160px);display:grid;place-items:center;padding:72px 0;background:linear-gradient(135deg,#f3f6f7 0%,#fff 60%,#f8e9e6 100%)}
+.error-card{width:min(760px,100%);margin:auto;padding:clamp(28px,6vw,64px);background:#fff;border:1px solid var(--line);box-shadow:0 24px 70px #10232d0d}
+.error-code{font:800 clamp(72px,16vw,140px)/.9 Manrope,sans-serif;letter-spacing:-.08em;color:var(--red);margin:0 0 24px}
+.error-card h1{font:800 clamp(28px,5vw,46px)/1.1 Manrope,sans-serif;letter-spacing:-.04em;margin:0 0 16px;color:var(--navy)}
+.error-card p{max-width:520px;color:var(--muted);margin:0 0 26px}
+.error-actions{display:flex;gap:12px;flex-wrap:wrap}
+.error-links{display:flex;gap:18px;flex-wrap:wrap;margin-top:28px;font-size:13px}
+.error-links a{color:var(--muted);text-decoration:underline;text-underline-offset:4px}
+.error-links a:hover{color:var(--red)}
+@media(max-width:600px){.error-page{min-height:70vh}.error-actions .btn{width:100%}}
+</style>
+</head>
+<body>
+<header class="header">
+<div class="wrap navrow">
+<a class="brand" href="index.html" aria-label="NM Fire home"><img class="brand-logo" src="assets/272.jpg" alt="NMFIRE Pakistan"></a>
+<a class="nav-cta btn" href="contact.html">Contact Us ↗</a>
+</div>
+</header>
+<main class="error-page">
+<section class="wrap">
+<div class="error-card">
+<p class="eyebrow">ERROR 404 · PAGE NOT FOUND</p>
+<div class="error-code" aria-hidden="true">404</div>
+<h1>This page isn't here.</h1>
+<p>The link may be outdated, the address may be incorrect, or this page may not have been added to the NM Fire website yet.</p>
+<div class="error-actions">
+<a class="btn btn-red" href="index.html">Back to homepage <span>→</span></a>
+<a class="btn btn-dark" href="products.html">Explore products <span>↗</span></a>
+</div>
+<nav class="error-links" aria-label="Helpful links">
+<a href="sitemap.html">View sitemap</a>
+<a href="contact.html">Contact NM Fire</a>
+</nav>
+</div>
+</section>
+</main>
+<footer class="footer">
+<div class="wrap footer-bottom"><span>© <span id="year"></span> CNP NM Fire-fighting System Co., Ltd.</span><a href="sitemap.html">Sitemap</a></div>
+</footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
