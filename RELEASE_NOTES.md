@@ -10,6 +10,12 @@ This file is maintained automatically by GitHub Actions for commits pushed to `m
 
 ## Release History
 
+### v1.0.92
+- **Serial No.:** RN-32393935
+- **Commit No.:** [`e123c08434e9c92b51d1e81a7cdb73122d3fca94`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/e123c08434e9c92b51d1e81a7cdb73122d3fca94)
+- **Date:** 2026-10-26
+- **Change:** Use Gemini Flash as the default free-tier model 
+
 ### v1.0.91
 - **Serial No.:** RN-59060952
 - **Commit No.:** [`79a603b42eab7eb2136025dd7201c7e2daf27d85`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/79a603b42eab7eb2136025dd7201c7e2daf27d85)
