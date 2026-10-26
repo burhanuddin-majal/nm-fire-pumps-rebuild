@@ -10,6 +10,12 @@ This file is maintained automatically by GitHub Actions for commits pushed to `m
 
 ## Release History
 
+### v1.0.88
+- **Serial No.:** RN-65221164
+- **Commit No.:** [`7c000711426278dd9668d0be0c243a559f03f40c`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/7c000711426278dd9668d0be0c243a559f03f40c)
+- **Date:** 2026-10-26
+- **Change:** Document Gemini provider configuration 
+
 ### v1.0.87
 - **Serial No.:** RN-40746217
 - **Commit No.:** [`4fba5ef0c9c9532fbe4ed44a7c03190b16b165af`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/4fba5ef0c9c9532fbe4ed44a7c03190b16b165af)
