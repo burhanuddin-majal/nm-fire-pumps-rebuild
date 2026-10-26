@@ -10,6 +10,12 @@ This file is maintained automatically by GitHub Actions for commits pushed to `m
 
 ## Release History
 
+### v1.0.89
+- **Serial No.:** RN-35405849
+- **Commit No.:** [`ef7b62cc5b65dd5208ae971654b547e39884efe1`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/ef7b62cc5b65dd5208ae971654b547e39884efe1)
+- **Date:** 2026-10-26
+- **Change:** Use Gemini Pro exclusively for NM Fire AI 
+
 ### v1.0.88
 - **Serial No.:** RN-65221164
 - **Commit No.:** [`7c000711426278dd9668d0be0c243a559f03f40c`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/7c000711426278dd9668d0be0c243a559f03f40c)
