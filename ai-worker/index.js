@@ -23,22 +23,22 @@ async function getWebsiteContext() {
       if (!res.ok) return "";
       const text = cleanHtml(await res.text());
       const limit = path === "products.html" ? 9000 : path === "product-detail.html" ? 5000 : 3500;
-      return "PAGE: "+path+"\\n"+text.slice(0, limit);
+      return "PAGE: "+path+"\n"+text.slice(0, limit);
     } catch { return ""; }
   }));
   let productContext = "";
   try {
     const res = await fetch(new URL("assets/product-detail.js", SITE_BASE), {cf:{cacheTtl:300}});
     const source = await res.text();
-    const match = source.match(/const\\s+NM_PRODUCT_DETAILS\\s*=\\s*(\\{[\\s\\S]*?\\});/);
+    const match = source.match(/const\s+NM_PRODUCT_DETAILS\s*=\s*(\{[\s\S]*?\});/);
     if (match) {
       const products = JSON.parse(match[1]);
-      productContext = "PUBLISHED PRODUCT DETAILS:\\n" + Object.entries(products).map(([key,p]) =>
-        (p.title || key)+"\\nStandards: "+(p.standards || "Not stated")+"\\nPerformance: "+(p.performance || "Not stated")+"\\nDescription: "+(p.description || "")+"\\nApplications: "+(p.applications || "")+"\\nSource: "+(p.source || "")
-      ).join("\\n\\n").slice(0,24000);
+      productContext = "PUBLISHED PRODUCT DETAILS:\n" + Object.entries(products).map(([key,p]) =>
+        (p.title || key)+"\nStandards: "+(p.standards || "Not stated")+"\nPerformance: "+(p.performance || "Not stated")+"\nDescription: "+(p.description || "")+"\nApplications: "+(p.applications || "")+"\nSource: "+(p.source || "")
+      ).join("\n\n").slice(0,24000);
     }
   } catch { productContext = "Product detail data could not be loaded; do not guess missing specifications."; }
-  return (productContext+"\\n\\n"+pages.filter(Boolean).join("\\n\\n")).slice(0,52000);
+  return (productContext+"\n\n"+pages.filter(Boolean).join("\n\n")).slice(0,52000);
 }
 
 // The manifest is admin-maintained and only permits PDFs hosted in this repo's
@@ -131,7 +131,7 @@ export default {
         })
       });
       const result = await upstream.json().catch(()=>({}));
-      const rawAnswer = result.candidates?.[0]?.content?.parts?.map(part=>part.text || "").join("\\n") || "";
+      const rawAnswer = result.candidates?.[0]?.content?.parts?.map(part=>part.text || "").join("\n") || "";
       if (!upstream.ok) {
         console.error("Gemini API error", JSON.stringify({model,status:upstream.status,error:result.error || result}));
         return new Response(JSON.stringify({error:"The AI provider returned an error. Please check the provider, model, and API key settings, then try again."}),{status:502,headers});
