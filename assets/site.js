@@ -86,28 +86,28 @@ document.addEventListener('DOMContentLoaded',()=>{const toggle=document.querySel
   const messages=panel.querySelector('.nm-ai-messages'),form=panel.querySelector('form'),input=panel.querySelector('textarea'),send=panel.querySelector('.nm-ai-send');
   let history=[],busy=false;
   const renderInline=(parent,text)=>{
-    // Some model responses escape Markdown link parentheses; normalize those before parsing.
+    // Some model responses escape Markdown link parentheses; normalize before parsing.
     text=String(text).replace(/\\([()])/g,'$1');
-    const pattern=/(\[[^\]]+\]\([^)]+\)|\`[^\`]+\`|\*\*[^*]+\*\*|__[^_]+__|(?<!\*)\*[^*\n]+\*(?!\*)|(?<!_)_[^_\n]+_(?!_))/g;
+    const pattern=/(\*\*\[[^\]]+\]\([^)]+\)\*\*|\[[^\]]+\]\([^)]+\)|\`[^\`]+\`|\*\*[^*]+\*\*|__[^_]+__|(?<!\*)\*[^*\n]+\*(?!\*)|(?<!_)_[^_\n]+_(?!_))/g;
     let last=0,match;
     while((match=pattern.exec(text))){
       if(match.index>last)parent.appendChild(document.createTextNode(text.slice(last,match.index)));
       const token=match[0];
+      const boldLink=token.match(/^\*\*(\[[^\]]+\]\([^)]+\))\*\*$/);
+      const link=(boldLink?boldLink[1]:token).match(/^\[([^\]]+)\]\(([^)]+)\)$/);
       let node;
-      const link=token.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
       if(link){
+        const wrapper=boldLink?document.createElement('strong'):null;
         node=document.createElement('a');
         node.textContent=link[1];
-        const rawHref=link[2].trim();
         try{
-          const href=new URL(rawHref,SITE_ROOT);
+          const href=new URL(link[2].trim(),SITE_ROOT);
           if(href.protocol==='http:'||href.protocol==='https:'){
             node.href=href.href;
             if(href.origin!==location.origin){node.target='_blank';node.rel='noopener noreferrer';}
-          }else{
-            node=document.createTextNode(link[1]);
-          }
+          }else node=document.createTextNode(link[1]);
         }catch{node=document.createTextNode(link[1]);}
+        if(wrapper){wrapper.appendChild(node);node=wrapper;}
       }else if(token.startsWith('\`')){
         node=document.createElement('code');node.textContent=token.slice(1,-1);
       }else if(token.startsWith('**')||token.startsWith('__')){
