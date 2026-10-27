@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded',()=>{const toggle=document.querySel
   .nm-ai-panel.is-open{display:flex}.nm-ai-head{background:#10232d;color:#fff;padding:16px;display:flex;align-items:center;justify-content:space-between;gap:12px}.nm-ai-head strong{font:800 16px Manrope,sans-serif;display:block}.nm-ai-head small{color:#c8d3d8;font-size:11px}.nm-ai-close{border:0;background:#ffffff1c;color:#fff;border-radius:8px;width:34px;height:34px;font-size:22px;cursor:pointer}
   .nm-ai-notice{padding:9px 14px;background:#f3f6f7;color:#63717a;font-size:11px;line-height:1.45;border-bottom:1px solid #dce3e6}
   .nm-ai-messages{padding:14px;overflow:auto;flex:1;display:flex;flex-direction:column;gap:10px;scroll-behavior:smooth}
-  .nm-ai-msg{max-width:91%;padding:10px 12px;border-radius:13px;font-size:13px;line-height:1.55;white-space:normal;overflow-wrap:anywhere}.nm-ai-msg.bot{align-self:flex-start;background:#f3f6f7;border:1px solid #e5eaec}.nm-ai-msg.user{align-self:flex-end;background:#10232d;color:#fff;white-space:pre-wrap}.nm-ai-msg strong{font-weight:800}.nm-ai-msg em{font-style:italic}.nm-ai-msg code{font-family:ui-monospace,monospace;background:#e3e9ec;padding:1px 4px;border-radius:4px}.nm-ai-msg ul,.nm-ai-msg ol{margin:5px 0 7px 20px;padding:0}.nm-ai-msg li{margin:3px 0}.nm-ai-msg .nm-ai-md-heading{font-family:Manrope,'DM Sans',sans-serif;font-weight:800;line-height:1.3;margin:8px 0 5px;color:#10232d}.nm-ai-msg h1.nm-ai-md-heading{font-size:19px}.nm-ai-msg h2.nm-ai-md-heading{font-size:17px}.nm-ai-msg h3.nm-ai-md-heading{font-size:15px}.nm-ai-msg h4.nm-ai-md-heading,.nm-ai-msg h5.nm-ai-md-heading,.nm-ai-msg h6.nm-ai-md-heading{font-size:13px}.nm-ai-msg .nm-ai-md-quote{margin:5px 0;padding:5px 9px;border-left:3px solid #e54835;color:#53636c;background:#e9eef0;border-radius:0 5px 5px 0}.nm-ai-msg .nm-ai-md-rule{border:0;border-top:1px solid #dce3e6;margin:8px 0}
+  .nm-ai-msg{max-width:91%;padding:10px 12px;border-radius:13px;font-size:13px;line-height:1.55;white-space:normal;overflow-wrap:anywhere}.nm-ai-msg.bot{align-self:flex-start;background:#f3f6f7;border:1px solid #e5eaec}.nm-ai-msg.user{align-self:flex-end;background:#10232d;color:#fff;white-space:pre-wrap}.nm-ai-msg strong{font-weight:800}.nm-ai-msg em{font-style:italic}.nm-ai-msg a{color:#bd3025;text-decoration:underline;text-underline-offset:2px;font-weight:700}.nm-ai-msg a:hover{color:#e54835}.nm-ai-msg code{font-family:ui-monospace,monospace;background:#e3e9ec;padding:1px 4px;border-radius:4px}.nm-ai-msg ul,.nm-ai-msg ol{margin:5px 0 7px 20px;padding:0}.nm-ai-msg li{margin:3px 0}.nm-ai-msg .nm-ai-md-heading{font-family:Manrope,'DM Sans',sans-serif;font-weight:800;line-height:1.3;margin:8px 0 5px;color:#10232d}.nm-ai-msg h1.nm-ai-md-heading{font-size:19px}.nm-ai-msg h2.nm-ai-md-heading{font-size:17px}.nm-ai-msg h3.nm-ai-md-heading{font-size:15px}.nm-ai-msg h4.nm-ai-md-heading,.nm-ai-msg h5.nm-ai-md-heading,.nm-ai-msg h6.nm-ai-md-heading{font-size:13px}.nm-ai-msg .nm-ai-md-quote{margin:5px 0;padding:5px 9px;border-left:3px solid #e54835;color:#53636c;background:#e9eef0;border-radius:0 5px 5px 0}.nm-ai-msg .nm-ai-md-rule{border:0;border-top:1px solid #dce3e6;margin:8px 0}
   .nm-ai-quick{display:flex;gap:7px;flex-wrap:wrap;padding:0 14px 10px}.nm-ai-quick button{border:1px solid #dce3e6;background:#fff;border-radius:999px;padding:7px 9px;font:600 11px 'DM Sans',sans-serif;cursor:pointer;color:#17252d}.nm-ai-quick button:hover{border-color:#e54835}
   .nm-ai-form{padding:12px;border-top:1px solid #dce3e6;display:flex;gap:8px}.nm-ai-input{min-width:0;flex:1;border:1px solid #cbd5d9;border-radius:11px;padding:11px;font:13px 'DM Sans',sans-serif;resize:none;max-height:90px}.nm-ai-send{border:0;border-radius:11px;background:#e54835;color:#fff;font-weight:700;padding:0 14px;cursor:pointer}.nm-ai-send:disabled{opacity:.55;cursor:wait}.nm-ai-foot{padding:0 14px 10px;color:#63717a;font-size:10px}
   @media(max-width:480px){.nm-ai-launch{right:14px;bottom:14px}.nm-ai-panel{right:8px;bottom:72px;width:calc(100vw - 16px);height:min(620px,calc(100dvh - 90px))}}
@@ -85,7 +85,41 @@ document.addEventListener('DOMContentLoaded',()=>{const toggle=document.querySel
   document.body.append(launch,panel);
   const messages=panel.querySelector('.nm-ai-messages'),form=panel.querySelector('form'),input=panel.querySelector('textarea'),send=panel.querySelector('.nm-ai-send');
   let history=[],busy=false;
-  const renderInline=(parent,text)=>{const pattern=/(`[^`]+`|\*\*[^*]+\*\*|__[^_]+__|(?<!\*)\*[^*\n]+\*(?!\*)|(?<!_)_[^_\n]+_(?!_))/g;let last=0,match;while((match=pattern.exec(text))){if(match.index>last)parent.appendChild(document.createTextNode(text.slice(last,match.index)));const token=match[0];let node;if(token.startsWith('`')){node=document.createElement('code');node.textContent=token.slice(1,-1);}else if(token.startsWith('**')||token.startsWith('__')){node=document.createElement('strong');node.textContent=token.slice(2,-2);}else{node=document.createElement('em');node.textContent=token.slice(1,-1);}parent.appendChild(node);last=pattern.lastIndex;}if(last<text.length)parent.appendChild(document.createTextNode(text.slice(last)));};
+  const renderInline=(parent,text)=>{
+    // Some model responses escape Markdown link parentheses; normalize those before parsing.
+    text=String(text).replace(/\\([()])/g,'$1');
+    const pattern=/(\[[^\]]+\]\([^)]+\)|\`[^\`]+\`|\*\*[^*]+\*\*|__[^_]+__|(?<!\*)\*[^*\n]+\*(?!\*)|(?<!_)_[^_\n]+_(?!_))/g;
+    let last=0,match;
+    while((match=pattern.exec(text))){
+      if(match.index>last)parent.appendChild(document.createTextNode(text.slice(last,match.index)));
+      const token=match[0];
+      let node;
+      const link=token.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+      if(link){
+        node=document.createElement('a');
+        node.textContent=link[1];
+        const rawHref=link[2].trim();
+        try{
+          const href=new URL(rawHref,SITE_ROOT);
+          if(href.protocol==='http:'||href.protocol==='https:'){
+            node.href=href.href;
+            if(href.origin!==location.origin){node.target='_blank';node.rel='noopener noreferrer';}
+          }else{
+            node=document.createTextNode(link[1]);
+          }
+        }catch{node=document.createTextNode(link[1]);}
+      }else if(token.startsWith('\`')){
+        node=document.createElement('code');node.textContent=token.slice(1,-1);
+      }else if(token.startsWith('**')||token.startsWith('__')){
+        node=document.createElement('strong');node.textContent=token.slice(2,-2);
+      }else{
+        node=document.createElement('em');node.textContent=token.slice(1,-1);
+      }
+      parent.appendChild(node);
+      last=pattern.lastIndex;
+    }
+    if(last<text.length)parent.appendChild(document.createTextNode(text.slice(last)));
+  };
   const renderMessage=(el,text)=>{const lines=String(text).split(/\n/);let list=null,listType='';for(const line of lines){const heading=line.match(/^\s*(#{1,6})\s+(.+?)\s*#*\s*$/);const unordered=line.match(/^\s*[-*+]\s+(.+)$/);const ordered=line.match(/^\s*\d+[.)]\s+(.+)$/);if(heading){list=null;const h=document.createElement('h'+heading[1].length);h.className='nm-ai-md-heading';renderInline(h,heading[2]);el.appendChild(h);continue;}if(unordered||ordered){const type=unordered?'ul':'ol';if(!list||listType!==type){list=document.createElement(type);el.appendChild(list);listType=type;}const li=document.createElement('li');renderInline(li,(unordered||ordered)[1]);list.appendChild(li);continue;}list=null;listType='';if(/^\s*([-*_])\1\1+\s*$/.test(line)){const hr=document.createElement('hr');hr.className='nm-ai-md-rule';el.appendChild(hr);continue;}if(/^\s*>\s?/.test(line)){const quote=document.createElement('blockquote');quote.className='nm-ai-md-quote';renderInline(quote,line.replace(/^\s*>\s?/,''));el.appendChild(quote);continue;}if(!line.trim()){continue;}const p=document.createElement('div');renderInline(p,line);el.appendChild(p);}};
   const add=(text,who='bot')=>{const el=document.createElement('div');el.className='nm-ai-msg '+who;if(who==='bot')renderMessage(el,text);else el.textContent=text;messages.appendChild(el);messages.scrollTop=messages.scrollHeight;return el;};
   const open=()=>{panel.classList.add('is-open');launch.setAttribute('aria-expanded','true');if(!messages.children.length)add(configured?'Hi! I can help you explore the pump types, published performance ranges, standards, applications, and resources on this website. What would you like to know?':'The chat interface is ready, but its secure AI service has not been connected yet. The site owner must deploy the AI backend and set its endpoint before visitors can receive answers.');if(configured)input.focus();};
