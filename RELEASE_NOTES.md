@@ -10,6 +10,12 @@ This file is maintained automatically by GitHub Actions for commits pushed to `m
 
 ## Release History
 
+### v1.0.98
+- **Serial No.:** RN-47897284
+- **Commit No.:** [`1a2cd10d3bdcf007c77271858bd08adc8d04513c`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/1a2cd10d3bdcf007c77271858bd08adc8d04513c)
+- **Date:** 2026-10-27
+- **Change:** Support full GitHub-Flavored Markdown in AI chat 
+
 ### v1.0.97
 - **Serial No.:** RN-40592934
 - **Commit No.:** [`757aec41484b7c54e40e40821a244f73599f66c0`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/757aec41484b7c54e40e40821a244f73599f66c0)
