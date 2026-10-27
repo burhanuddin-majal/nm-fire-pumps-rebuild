@@ -10,6 +10,12 @@ This file is maintained automatically by GitHub Actions for commits pushed to `m
 
 ## Release History
 
+### v1.0.97
+- **Serial No.:** RN-40592934
+- **Commit No.:** [`757aec41484b7c54e40e40821a244f73599f66c0`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/757aec41484b7c54e40e40821a244f73599f66c0)
+- **Date:** 2026-10-27
+- **Change:** Fix bold Markdown links in AI chat responses 
+
 ### v1.0.96
 - **Serial No.:** RN-01578077
 - **Commit No.:** [`9aa14c72aed4f8e1e238c608afa2e3eef74233c2`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/9aa14c72aed4f8e1e238c608afa2e3eef74233c2)
