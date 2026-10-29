@@ -189,3 +189,72 @@ document.addEventListener('DOMContentLoaded',()=>{const toggle=document.querySel
     }catch(err){waiting.remove();add(err.message||'The assistant is temporarily unavailable. Please try again later.');}finally{busy=false;send.disabled=false;send.textContent='Send';input.focus();}
   });
 })();
+
+
+/* Friendly, best-effort VPN/proxy notice. This never blocks the website. */
+(()=>{
+  const CACHE_KEY='nmfire_connection_check_v1';
+  const DISMISSED_KEY='nmfire_connection_notice_dismissed_v1';
+  let cached=null;
+  try{
+    cached=sessionStorage.getItem(CACHE_KEY);
+    if(sessionStorage.getItem(DISMISSED_KEY)==='1')return;
+  }catch{}
+  const showNotice=()=>{
+    if(document.getElementById('nm-connection-notice'))return;
+    const style=document.createElement('style');
+    style.textContent=".nm-connection-overlay{position:fixed;inset:0;z-index:12000;display:grid;place-items:center;padding:18px;background:rgba(8,20,27,.58);backdrop-filter:blur(4px)}.nm-connection-card{width:min(430px,100%);background:#fff;color:#17252d;border:1px solid #dce3e6;border-radius:18px;padding:24px;box-shadow:0 24px 80px #0004;font-family:'DM Sans',Arial,sans-serif}.nm-connection-icon{width:46px;height:46px;border-radius:14px;background:#fff0e8;color:#bd4a22;display:grid;place-items:center;font-size:23px;margin-bottom:14px}.nm-connection-card h2{margin:0 0 9px;font:800 21px/1.25 Manrope,'DM Sans',Arial,sans-serif;color:#10232d}.nm-connection-card p{margin:0 0 17px;font-size:14px;line-height:1.6;color:#53636c}.nm-connection-actions{display:flex;gap:9px;flex-wrap:wrap}.nm-connection-actions button{border-radius:10px;padding:11px 14px;font:700 13px 'DM Sans',Arial,sans-serif;cursor:pointer}.nm-connection-primary{border:0;background:#e54835;color:#fff}.nm-connection-secondary{border:1px solid #dce3e6;background:#fff;color:#17252d}.nm-connection-actions button:focus-visible{outline:3px solid #10232d;outline-offset:3px}@media(prefers-reduced-motion:no-preference){.nm-connection-card{animation:nmConnectionIn .18s ease-out}@keyframes nmConnectionIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}}";
+    document.head.appendChild(style);
+    const overlay=document.createElement('div');
+    overlay.id='nm-connection-notice';
+    overlay.className='nm-connection-overlay';
+    overlay.setAttribute('role','presentation');
+    overlay.innerHTML='<section class="nm-connection-card" role="dialog" aria-modal="true" aria-labelledby="nm-connection-title" aria-describedby="nm-connection-description"><div class="nm-connection-icon" aria-hidden="true">ⓘ</div><h2 id="nm-connection-title">A quick connection tip</h2><p id="nm-connection-description">Your connection looks like it may be using a VPN, proxy, or privacy relay. For the best experience, please disable it and refresh the page. You can still continue browsing if you prefer.</p><div class="nm-connection-actions"><button class="nm-connection-primary" type="button" data-nm-connection-dismiss>Continue browsing</button><button class="nm-connection-secondary" type="button" data-nm-connection-refresh>Refresh page</button></div></section>';
+    document.body.appendChild(overlay);
+    const dismiss=()=>{try{sessionStorage.setItem(DISMISSED_KEY,'1')}catch{}overlay.remove();};
+    overlay.querySelector('[data-nm-connection-dismiss]').addEventListener('click',dismiss);
+    overlay.querySelector('[data-nm-connection-refresh]').addEventListener('click',()=>location.reload());
+    overlay.addEventListener('click',event=>{if(event.target===overlay)dismiss();});
+    const onKey=event=>{if(event.key==='Escape'){dismiss();document.removeEventListener('keydown',onKey);}};
+    document.addEventListener('keydown',onKey);
+    overlay.querySelector('[data-nm-connection-dismiss]').focus();
+  };
+  const isFlagged=data=>{
+    const signals=Array.isArray(data?.signals)?data.signals:[];
+    const matched=signals.some(s=>s?.matched===true&&/vpn|proxy|tor|relay|anonymous/i.test(String(s?.type||'')));
+    return Boolean(data?.is_vpn||data?.is_proxy||data?.is_tor||
+      data?.ip_info?.is_vpn||data?.ip_info?.is_proxy||data?.ip_info?.is_tor||
+      ['vpn_likely','vpn_detected'].includes(String(data?.verdict||'').toLowerCase())||matched);
+  };
+  const run=async()=>{
+    try{
+      let verdict=null;
+      if(cached){try{verdict=JSON.parse(cached)}catch{}}
+      if(!verdict){
+        const controller=new AbortController();
+        const timeout=setTimeout(()=>controller.abort(),6500);
+        try{
+          const response=await fetch('https://iplogs.com/v1/check',{
+            method:'POST',
+            headers:{'Content-Type':'application/json'},
+            body:JSON.stringify({
+              user_agent:navigator.userAgent,
+              timezone:Intl.DateTimeFormat().resolvedOptions().timeZone||'',
+              language:navigator.language||''
+            }),
+            signal:controller.signal,
+            cache:'no-store'
+          });
+          if(!response.ok)return;
+          verdict=await response.json();
+          try{sessionStorage.setItem(CACHE_KEY,JSON.stringify(verdict))}catch{}
+        }finally{clearTimeout(timeout);}
+      }
+      if(isFlagged(verdict))showNotice();
+    }catch{
+      // Fail open: a detector outage or blocked request must never interrupt browsing.
+    }
+  };
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run,{once:true});
+  else run();
+})();
