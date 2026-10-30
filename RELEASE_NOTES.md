@@ -10,6 +10,12 @@ This file is maintained automatically by GitHub Actions for commits pushed to `m
 
 ## Release History
 
+### v1.0.100
+- **Serial No.:** RN-37385700
+- **Commit No.:** [`2c4ea67d01813d509cc53e94e7a7aa54a560d32b`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/2c4ea67d01813d509cc53e94e7a7aa54a560d32b)
+- **Date:** 2026-10-30
+- **Change:** Show VPN notice for likely VPN scores 
+
 ### v1.0.99
 - **Serial No.:** RN-66994332
 - **Commit No.:** [`a518de77e8ecd69e4ada79447067c32db92a8efc`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/a518de77e8ecd69e4ada79447067c32db92a8efc)
