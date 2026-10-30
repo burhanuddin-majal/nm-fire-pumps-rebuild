@@ -221,10 +221,15 @@ document.addEventListener('DOMContentLoaded',()=>{const toggle=document.querySel
   };
   const isFlagged=data=>{
     const signals=Array.isArray(data?.signals)?data.signals:[];
+    const verdict=String(data?.verdict||'').trim().toLowerCase();
+    const score=Number(data?.score);
     const matched=signals.some(s=>s?.matched===true&&/vpn|proxy|tor|relay|anonymous/i.test(String(s?.type||'')));
+    // IPLogs classifies scores from 0.60 to 0.84 as "likely VPN".
+    // Check both the explicit verdict and score so either response format triggers the notice.
     return Boolean(data?.is_vpn||data?.is_proxy||data?.is_tor||
       data?.ip_info?.is_vpn||data?.ip_info?.is_proxy||data?.ip_info?.is_tor||
-      ['vpn_likely','vpn_detected'].includes(String(data?.verdict||'').toLowerCase())||matched);
+      verdict==='vpn_likely'||verdict==='vpn_detected'||
+      (Number.isFinite(score)&&score>=0.60)||matched);
   };
   const run=async()=>{
     try{
