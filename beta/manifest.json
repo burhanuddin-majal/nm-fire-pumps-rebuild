@@ -1,0 +1,83 @@
+{
+  "title": "NM Fire AI Resource Manifest",
+  "version": 1,
+  "last_updated": "2026-10-31",
+  "purpose": "Search index for public NM Fire documents and official download pages. Puter AI reads this file to identify relevant resources and provide their URLs.",
+  "rules": [
+    "Use only the exact public URLs listed here.",
+    "Do not invent filenames, direct PDF URLs, technical specifications, or certifications.",
+    "The official Download Library is a discovery page; open it to find current individual file links.",
+    "Prefer direct PDF URLs when available and verify document revision and model applicability."
+  ],
+  "documents": [
+    {
+      "id": "company-profile",
+      "title": "NM-FIRE Company Profile",
+      "category": "Company profile",
+      "format": "PDF",
+      "url": "https://www.nmfirepumps.com/pdf/NM-FIRE-Company-Profile.pdf",
+      "source_url": "https://www.nmfirepumps.com/pdf/NM-FIRE-Company-Profile.pdf",
+      "keywords": [
+        "company profile",
+        "company overview",
+        "NM Fire",
+        "products",
+        "certificates"
+      ],
+      "availability": "Direct PDF URL confirmed on the website resources page",
+      "notes": "Public company profile PDF. Verify latest revision with NM Fire."
+    },
+    {
+      "id": "official-download-library",
+      "title": "Official NM Fire Download Library",
+      "category": "Product literature / downloads",
+      "format": "Web page; files may include PDF",
+      "url": "https://www.nmfirepumps.com/Download",
+      "source_url": "https://www.nmfirepumps.com/Download",
+      "keywords": [
+        "download",
+        "datasheet",
+        "fire pump equipment",
+        "split-case fire pump",
+        "diesel engine",
+        "end-suction",
+        "product literature"
+      ],
+      "availability": "Official download index; individual file URLs must be discovered from the page",
+      "notes": "Listed for Fire Pump Equipment, Split-case Fire Pump System, NM Fire Series Standard Diesel Engine, and End-Suction Fire Pump Systems. Do not invent direct PDF filenames."
+    },
+    {
+      "id": "official-certificates",
+      "title": "Official NM Fire Certificates",
+      "category": "Certificates",
+      "format": "Web page; certificates may be downloadable",
+      "url": "https://www.nmfirepumps.com/Certificates",
+      "source_url": "https://www.nmfirepumps.com/Certificates",
+      "keywords": [
+        "certificate",
+        "UL",
+        "FM",
+        "certification",
+        "approval"
+      ],
+      "availability": "Official certificate index",
+      "notes": "Match certificates to the exact model and configuration. Do not infer certification."
+    },
+    {
+      "id": "official-news",
+      "title": "Official NM Fire News",
+      "category": "News / technical updates",
+      "format": "Web page",
+      "url": "https://www.nmfirepumps.com/News",
+      "source_url": "https://www.nmfirepumps.com/News",
+      "keywords": [
+        "news",
+        "technical seminar",
+        "updates",
+        "training"
+      ],
+      "availability": "Official news page",
+      "notes": "May link to additional documents or technical announcements."
+    }
+  ]
+}
