@@ -10,6 +10,12 @@ This file is maintained automatically by GitHub Actions for commits pushed to `m
 
 ## Release History
 
+### v1.0.103
+- **Serial No.:** RN-58946719
+- **Commit No.:** [`eb2aaeebabbdc1ae45691811ea6054393207072b`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/eb2aaeebabbdc1ae45691811ea6054393207072b)
+- **Date:** 2026-10-31
+- **Change:** Connect Puter AI to public resource manifest 
+
 ### v1.0.102
 - **Serial No.:** RN-67832634
 - **Commit No.:** [`f404857dd97a2dc79705af64a9a8a0b51a9c9a30`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/f404857dd97a2dc79705af64a9a8a0b51a9c9a30)
