@@ -54,7 +54,18 @@ document.addEventListener('DOMContentLoaded',()=>{const toggle=document.querySel
           }
         }
       }catch{productDetails='Product detail data could not be loaded; do not guess missing specifications.';}
-      return (productDetails+'\n\n'+pages.filter(Boolean).join('\n\n')).slice(0,32000);
+      let resourceContext='';
+      try{
+        const response=await fetch(new URL('beta/manifest.json',SITE_ROOT),{cache:'no-store'});
+        if(response.ok){
+          const manifest=await response.json();
+          const documents=Array.isArray(manifest.documents)?manifest.documents:[];
+          resourceContext='PUBLIC RESOURCE MANIFEST (verified URLs and discovery pages):\\n'+documents.map(doc=>
+            'Title: '+(doc.title||'Untitled')+'\\nCategory: '+(doc.category||'')+'\\nFormat: '+(doc.format||'')+'\\nURL: '+(doc.url||'')+'\\nKeywords: '+(Array.isArray(doc.keywords)?doc.keywords.join(', '):'')+'\\nAvailability: '+(doc.availability||'')+'\\nNotes: '+(doc.notes||'')
+          ).join('\\n\\n')+'\\n\\nManifest rules: use exact URLs; the official Download page is a discovery page, not a confirmed direct PDF; never invent file links or filenames.';
+        }
+      }catch{resourceContext='The public resource manifest could not be loaded. Do not invent downloadable documents.';}
+      return (productDetails+'\\n\\n'+resourceContext+'\\n\\n'+pages.filter(Boolean).join('\\n\\n')).slice(0,36000);
     })();
     return contextPromise;
   }
