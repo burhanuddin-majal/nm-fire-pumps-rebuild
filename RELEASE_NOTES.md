@@ -10,6 +10,12 @@ This file is maintained automatically by GitHub Actions for commits pushed to `m
 
 ## Release History
 
+### v1.0.104
+- **Serial No.:** RN-01020491
+- **Commit No.:** [`010b85ade3b8dc352c9c1ad6e3a3f3e138a240c6`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/010b85ade3b8dc352c9c1ad6e3a3f3e138a240c6)
+- **Date:** 2026-10-31
+- **Change:** Replace beta resources with Puter AI resource manifests 
+
 ### v1.0.103
 - **Serial No.:** RN-58946719
 - **Commit No.:** [`eb2aaeebabbdc1ae45691811ea6054393207072b`](https://github.com/burhanuddin-majal/nm-fire-pumps-rebuild/commit/eb2aaeebabbdc1ae45691811ea6054393207072b)
